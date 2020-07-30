@@ -13,10 +13,36 @@
             vertical-align: unset !important;
         }
 
-        /* Ändert die Farbe des Platzhalter-Textes in der Navigation, auf den grünen Bootstrap Farbton -T */
+        /* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
 
         .form-text-success::placeholder {
-            color: #28a745 !important;
+            color: #6ab04c !important;
+        }
+
+        .form-border-next-green {
+            border: 1px solid #6ab04c;
+        }
+
+        .next-bg-green {
+            background-color: #6ab04c;
+        }
+
+        .next-bg-lime {
+            background-color: #2ecc71;
+        }
+
+        .next-bg-orange {
+            background-color: #f0932b;
+        }
+
+        .next-bg-red {
+            background-color: #eb4d4b;
+        }
+
+        .container-main {
+            margin: 0 auto;
+            /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
+            max-width: calc(100% - 3rem);
         }
     </style>
 </head>
@@ -77,10 +103,10 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input type="text" class="form-control border-success text-success form-text-success" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control form-text-success form-border-next-green" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
                     <span class="btn-group-vertical ml-2" id="basic-addon2">
                         <button type="button" class="btn btn-sm">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-success icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search icon-unset" style="color: 6ab04c;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
                                 <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                             </svg>
@@ -117,48 +143,59 @@
     </div>
 
     <!-- MAIN -->
-    <main class="my-5 container">
-        <h1 class="h3 mb-5 pb-2 border-bottom">Unser Sortiment</h1>
+    <main class="my-5 container-main">
 
         <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
 
-        <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
                 <a class="text-decoration-none" href="#">
-                    <div class="card bg-info text-white">
-                        <img src="https://via.placeholder.com/512x256" class="card-img-top" alt="Platzhalter 512x256">
-                        <div class="card-body">
-                            <h5 class="card-title">Obst</h5>
+                    <div class="card rounded-0">
+                        <svg width="100%" height="400">
+                            <rect width="100%" height="400" style="fill: #6ab04c"></rect>
+                        </svg>
+                        <div class="card-body next-bg-green text-white">
+                            <h2 class="card-title display-2 text-uppercase">Obst</h2>
+                            <p class="lead">Deine Ladung Obst</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
                 <a class="text-decoration-none" href="#">
-                    <div class="card bg-danger text-white">
-                        <img src="https://via.placeholder.com/512x256" class="card-img-top" alt="Platzhalter 512x256">
-                        <div class="card-body">
-                            <h5 class="card-title">Gemüse</h5>
+                    <div class="card rounded-0">
+                        <svg width="100%" height="400">
+                            <rect width="100%" height="400" style="fill: #2ecc71"></rect>
+                        </svg>
+                        <div class="card-body next-bg-lime text-white">
+                            <h2 class="card-title display-2 text-uppercase">Gemüse</h2>
+                            <p class="lead">Hier steht ein Satz</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
                 <a class="text-decoration-none" href="#">
-                    <div class="card bg-success text-white">
-                        <img src="https://via.placeholder.com/512x256" class="card-img-top" alt="Platzhalter 512x256">
-                        <div class="card-body">
-                            <h5 class="card-title">Früchte</h5>
+                    <div class="card rounded-0">
+                        <svg width="100%" height="400">
+                            <rect width="100%" height="400" style="fill: #f0932b"></rect>
+                        </svg>
+                        <div class="card-body next-bg-orange text-white">
+                            <h2 class="card-title display-2 text-uppercase">Exotisch</h2>
+                            <p class="lead">Noch ein Satz!</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col">
                 <a class="text-decoration-none" href="#">
-                    <div class="card bg-primary text-white">
-                        <img src="https://via.placeholder.com/512x256" class="card-img-top" alt="Platzhalter 512x256">
-                        <div class="card-body">
-                            <h5 class="card-title">Exotisch</h5>
+                    <div class="card rounded-0">
+                        <svg width="100%" height="400">
+                            <rect width="100%" height="400" style="fill: #eb4d4b"></rect>
+                        </svg>
+                        <div class="card-body next-bg-red text-white">
+                            <h2 class="card-title display-2 text-uppercase">Früchte</h2>
+                            <p class="lead">Sätze fürs Leben</p>
                         </div>
                     </div>
                 </a>
@@ -167,6 +204,51 @@
 
     </main>
     <!-- /MAIN -->
+
+    <section class="jumbotron bg-light">
+        <div class="container py-5">
+            <h1 class="display-4 text-uppercase text-center">Mitgliedschaft</h1>
+            <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci earum in distinctio? Et, maxime minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit magnam a voluptate omnis. Dolor, nemo!</p>
+            <div class="row g-4 mt-5">
+                <div class="col-md-6">
+                    <div class="card text-center rounded-0">
+                        <div class="card-header">
+                            <h3 class="text-uppercase">Standard</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-4">Kostenlos</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Standard-Versand</li>
+                                <li class="list-group-item">Kostenlose Beratung</li>
+                                <li class="list-group-item">24/7 Support</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-outline-primary text-uppercase">Jetzt anmelden</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center rounded-0">
+                        <div class="card-header">
+                            <h3 class="text-uppercase">Pro</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-4">7,99€ <span class="text-muted small">pro Monat</span></h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Alle Vorteile der Standard-Mitgliedschaft</li>
+                                <li class="list-group-item">Express-Versand</li>
+                                <li class="list-group-item">Exklusive Rabatte</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary text-uppercase">Vorteile nutzen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-dark text-white py-5">
@@ -177,7 +259,7 @@
                     <div class="col-md-3 mb-md-0 mb-3">
                         <h5 class="text-uppercase"><a href="index.html" class="text-white text-decoration-none">neXtLVL Goods</a></h5>
                         <ul class="list-unstyled">
-                            <li class="small pt-3 text-light">
+                            <li class="small pt-3 text-light w-75">
                                 neXtLVL Goods ist deine Quelle für ausgezeichnete Früche und Gemüse. Hol dir jetzt deine Portion Vitamine!
                             </li>
                         </ul>
