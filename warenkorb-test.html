@@ -154,7 +154,7 @@
                         Die besten Äpfel... Hier muss ein guter Text hin...
 
                         Wie viele Produkte möchten Sie kaufen?
-                        <input type="number" class="form-control" aria-label="x Produkte" id="data-anz_apfel">
+                        <input type="number" class="form-control" aria-label="x Produkte" id="data-anz_apfel" value="1" required min="1" max="100" step="1">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
@@ -258,7 +258,9 @@
 
             // Wie viele Produkte sollen genommen werden --> GET data-anz_<produkt>
             let cnt = document.getElementById('data-anz_apfel').value;
+            console.log(cnt > 0);
 
+            if(cnt > 0) {
             // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
             // Könnten wir auch eigentlich auch ohne machen
             localStorage.setItem(product, true);
@@ -267,6 +269,9 @@
             localStorage.setItem(product + '_anz', cnt);
 
             showWarenkorbToast(product, cnt);
+            } else {
+                alert(`Ungültige Anzahl! Die Zahl muss größer seien als ${cnt}!`);
+            }
 
         }
 
