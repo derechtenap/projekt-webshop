@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Aug 2020 um 16:42
+-- Erstellungszeit: 03. Aug 2020 um 21:31
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.4.8
 
@@ -58,7 +58,7 @@ CREATE TABLE `t_kunden` (
 CREATE TABLE `t_plz` (
   `PLZ` varchar(5) NOT NULL,
   `Ort` varchar(40) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,13 @@ INSERT INTO `t_produkte` (`Prod_ID`, `ProduktName`, `Nettopreis`, `Lagerbesstand
 CREATE TABLE `t_rechnung` (
   `Re_Nr` int(11) NOT NULL,
   `Datum` date NOT NULL,
-  `FK_K_Nr` int(11) NOT NULL
+  `FK_K_Nr` int(11) NOT NULL,
+  `Zahlungsart` varchar(20) NOT NULL,
+  `Versandart` varchar(10) NOT NULL,
+  `Versand_Name` varchar(30) NOT NULL,
+  `Versand_Vorname` varchar(30) NOT NULL,
+  `Versand_Strasse` varchar(40) NOT NULL,
+  `Versand_PLZ` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -123,7 +129,7 @@ ALTER TABLE `t_bestellliste`
 --
 ALTER TABLE `t_kunden`
   ADD PRIMARY KEY (`K_Nr`),
-  ADD KEY `PLZ` (`FK_PLZ`);
+  ADD KEY `FK_plz_kunde` (`FK_PLZ`) USING BTREE;
 
 --
 -- Indizes für die Tabelle `t_plz`
@@ -142,7 +148,8 @@ ALTER TABLE `t_produkte`
 --
 ALTER TABLE `t_rechnung`
   ADD PRIMARY KEY (`Re_Nr`),
-  ADD KEY `FK_kunde_rechnung` (`FK_K_Nr`) USING BTREE;
+  ADD KEY `FK_kunde_rechnung` (`FK_K_Nr`) USING BTREE,
+  ADD KEY `FK_rechnung_PLZ` (`Versand_PLZ`) USING BTREE;
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -180,13 +187,20 @@ ALTER TABLE `t_rechnung`
 -- Constraints der Tabelle `t_bestellliste`
 --
 ALTER TABLE `t_bestellliste`
-  ADD CONSTRAINT `bestellliste_kunde_FK` FOREIGN KEY (`FK_Prod_ID`) REFERENCES `t_kunden` (`K_Nr`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `bestellliste_produkt_FK` FOREIGN KEY (`FK_Prod_ID`) REFERENCES `t_produkte` (`Prod_ID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `bestellliste_rechnung_FK` FOREIGN KEY (`FK_Re_Nr`) REFERENCES `t_rechnung` (`Re_Nr`) ON UPDATE CASCADE;
+
+--
+-- Constraints der Tabelle `t_kunden`
+--
+ALTER TABLE `t_kunden`
+  ADD CONSTRAINT `plz_kunde_FK` FOREIGN KEY (`FK_PLZ`) REFERENCES `t_plz` (`PLZ`) ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `t_rechnung`
 --
 ALTER TABLE `t_rechnung`
+  ADD CONSTRAINT `rechnung_Versand_plz_FK` FOREIGN KEY (`Versand_PLZ`) REFERENCES `t_plz` (`PLZ`) ON UPDATE CASCADE,
   ADD CONSTRAINT `rechnung_kunde_FK` FOREIGN KEY (`FK_K_Nr`) REFERENCES `t_kunden` (`K_Nr`) ON UPDATE CASCADE;
 COMMIT;
 
