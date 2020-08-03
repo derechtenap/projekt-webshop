@@ -121,11 +121,28 @@
     <!-- MAIN -->
     <main class="my-5 container-main">
 
+        <!-- TOAST FÜR WARENKORB INPUT -->
+
+        <div aria-live="polite" aria-atomic="true" style="position: relative;">
+            <div class="toast" style="position: absolute; top: 0; right: 0;" data-id="toast_warenkorb" data-delay="5000">
+                <div class="toast-header">
+                    <!--<img src="..." class="rounded mr-2" alt="...">-->
+                    <strong class="mr-auto"><span data-id="product_name"></span> wurde dem Warenkorb hinzugefügt!</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <span class="font-weight-bold" data-id="product_cnt">0</span> <span class="font-weight-bold" data-id="product_name"></span> wurde dem Warenkorb hinzugefügt. Sie können gerne weitere Produkte hinzufügen!
+                </div>
+            </div>
+        </div>
+
         <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
 
         <!-- Modal -->
         <div class="modal fade" id="staticApfel" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticApfel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title display-1 text-uppercase" id="staticApfelLabel">Apfel</h5>
@@ -218,26 +235,52 @@
     </footer>
     <!-- /FOOTER -->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        
+        // DEBUG Testobjekte
+
+        var fruits = ['apfel', 'bananen', 'kiwi', 'kirsche']; // Hier muss der DB Zugang hin
+
+        // Lade die Früchte in den LocalStorage
+
+        for (let i = 0; i < fruits.length; i++) {
+            console.info(`Lade ${fruits[i]} mit dem Wert false in den Storage...`);
+            localStorage.setItem(fruits[i], false);
+        }
+    </script>
+
+    <script>
         // Mini Skript -- Lädt alles in den Storage (ohne jQuery)
 
-        function addProduct(produkt) {
+        function addProduct(product) {
 
             // Wie viele Produkte sollen genommen werden --> GET data-anz_<produkt>
-            let anzahl = document.getElementById('data-anz_apfel').value;
-            
+            let cnt = document.getElementById('data-anz_apfel').value;
+
             // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
             // Könnten wir auch eigentlich auch ohne machen
-            localStorage.setItem(produkt, true);  
+            localStorage.setItem(product, true);
 
             // Weiterer Storage Eintrag, mit der Anzahl -- Ist einfacher als ein JSON Eintrag. Könnte ich aber auch machen
-            localStorage.setItem(produkt + '_anz', anzahl);
+            localStorage.setItem(product + '_anz', cnt);
+
+            showWarenkorbToast(product, cnt);
 
         }
 
+        function showWarenkorbToast(product, cnt) {
+            console.info('Warenkorb add!' + ` (${cnt}x ${product})`);
+
+            $('#staticApfel').modal('hide'); // Schließe Modal
+
+            $('[data-id="product_name"').html(product.charAt(0).toUpperCase() + product.slice(1)); // Erster Buchstabe groß...
+            $('[data-id="product_cnt"').html(`${cnt}x`);
+
+            // Zeige Toast
+            $('[data-id="toast_warenkorb"').toast('show');
+        }
     </script>
 
 </body>
