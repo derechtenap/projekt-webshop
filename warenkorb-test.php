@@ -163,22 +163,16 @@
                 </div>
             </div>
         </div>
-
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <a class="text-decoration-none" href="#" data-toggle="modal" data-target="#staticApfel">
-                    <div class="card rounded-0">
-                        <svg width="100%" height="400">
-                            <rect width="100%" height="400" style="fill: #6ab04c"></rect>
-                        </svg>
-                        <div class="card-body next-bg-green text-white">
-                            <h2 class="card-title display-2 text-uppercase">Apfel</h2>
-                            <p class="lead">Ein cooler Text</p>
-                        </div>
-                    </div>
-                </a>
+        <!-- /Modal-->
+        
+        <section class="container" id="produkte">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <?php include 'card.php' ?>
+                </div>
             </div>
-        </div>
+        </section>
+
 
     </main>
     <!-- /MAIN -->
@@ -260,15 +254,15 @@
             let cnt = document.getElementById('data-anz_apfel').value;
             console.log(cnt > 0);
 
-            if(cnt > 0) {
-            // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
-            // Könnten wir auch eigentlich auch ohne machen
-            localStorage.setItem(product, true);
+            if (cnt > 0) {
+                // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
+                // Könnten wir auch eigentlich auch ohne machen
+                localStorage.setItem(product, true);
 
-            // Weiterer Storage Eintrag, mit der Anzahl -- Ist einfacher als ein JSON Eintrag. Könnte ich aber auch machen
-            localStorage.setItem(product + '_anz', cnt);
+                // Weiterer Storage Eintrag, mit der Anzahl -- Ist einfacher als ein JSON Eintrag. Könnte ich aber auch machen
+                localStorage.setItem(product + '_anz', cnt);
 
-            showWarenkorbToast(product, cnt);
+                showWarenkorbToast(product, cnt);
             } else {
                 alert(`Ungültige Anzahl! Die Zahl muss größer seien als ${cnt}!`);
             }
@@ -286,6 +280,42 @@
             // Zeige Toast
             $('[data-id="toast_warenkorb"').toast('show');
         }
+
+        //AJAX aufrufen
+        var ajax = new XMLHttpRequest();
+        var method = "GET";
+        var url = "data.php";
+
+        ajax.open(method, url);
+
+        // AJAX request schicken
+        ajax.send();
+
+        //Antwort von data.php
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                // JSON Objekt in Array konvertieren
+                var data = JSON.parse(this.responseText);
+                console.log(data); //nur zum debugging
+
+                var html = "";
+
+                //die daten der gewünschten Attribute durchlaufen
+                for (var i = 0; i < data.length; i++) {
+                    var artikel_Nr = data[i].Prod_ID;
+                    var artikel = data[i].ProduktName;
+                    var preis = data[i].Nettopreis;
+
+
+                    //html += "<td>" + artikel_Nr + "</td>";
+                    html += artikel;
+                    //html += "<td>" + preis * 1.19 + "</td>";
+
+                }
+
+                document.getElementById("data").innerHTML = html;
+            }
+        };
     </script>
 
 </body>
