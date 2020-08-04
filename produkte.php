@@ -49,6 +49,15 @@
 
 <body>
 
+    <?php
+    /**Datenbankverbindung herstellen */
+    require_once("db_login.inc.php"); 
+    $mysqli = login("webshopdb"); 
+
+    /**Ausgabe der Datensätze */
+    $result = $mysqli->query("SELECT Prod_ID, ProduktName, Nettopreis, Beschreibung FROM t_produkte");
+    ?>
+
     <!-- TOP LEVEL NAV -->
     <nav class="nav border-bottom small justify-content-end">
 
@@ -163,17 +172,9 @@
                 </div>
             </div>
         </div>
-        <!-- /Modal-->
+        <!-- /Modal -->
 
-        <?php
-    /**Datenbankverbindung herstellen */
-    require_once("db_login.inc.php"); 
-    $mysqli = login("webshopdb"); 
-
-    /**Ausgabe der Datensätze */
-    $result = $mysqli->query("SELECT Prod_ID, ProduktName, Nettopreis FROM t_produkte");
-
-    ?>       
+        <!-- Card -->
         <section class="container" id="produkte">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <?php while($row = $result->fetch_assoc()):?>
@@ -183,7 +184,7 @@
                 <?php endwhile;?>
             </div>
         </section>
-
+         <!-- Card -->
 
     </main>
     <!-- /MAIN -->
