@@ -164,12 +164,23 @@
             </div>
         </div>
         <!-- /Modal-->
-        
+
+        <?php
+    /**Datenbankverbindung herstellen */
+    require_once("db_login.inc.php"); 
+    $mysqli = login("webshopdb"); 
+
+    /**Ausgabe der Datensätze */
+    $result = $mysqli->query("SELECT Prod_ID, ProduktName, Nettopreis FROM t_produkte");
+
+    ?>       
         <section class="container" id="produkte">
             <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php while($row = $result->fetch_assoc()):?>
                 <div class="col">
                     <?php include 'card.php' ?>
                 </div>
+                <?php endwhile;?>
             </div>
         </section>
 
