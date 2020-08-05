@@ -7,7 +7,12 @@
     <script src="/js/bestellUebersicht.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-      
+      /*
+    Die eigentliche Funktion des Submit Buttons wird deaktiviert.
+    Daten werden nach Submit Button klick ins LocalStorage geladen
+    Div mit Formular verschwindet
+    Div mit Bestellübersicht wird angezeigt
+    */   
     $(document).ready(function() {
             //option A
             $("form").submit(function(e){
@@ -18,9 +23,18 @@
                 showElement("userOutput");
                 showData();
             });
+             /*
+    Zurückbutton, welche in der Bestellübersicht angezeigt wird. Formular wird wieder
+    sichtbar
+    Localstorage und Formular sind resetet
+    */
+    $('#back').click(function(){
+       $('#userOutput').hide();
+       $('#userInput').show();
+        localStorage.clear();
+        $('#bestellung').trigger("reset"); 
         });
-
-    
+    });
 
 
     </script>
@@ -30,20 +44,20 @@
         <form id="bestellung" method="POST">
         <h3> Lieferanschrift</h3>
         <hr>
-        <input type="text" id="accVorname" placeholder="Vorname">
-        <input type="text" id="accNachname" placeholder="Nachname"> <br>
+        <input type="text" id="accVorname" placeholder="Vorname" required autofocus>
+        <input type="text" id="accNachname" placeholder="Nachname" required> <br>
         
-        <input type="text" id="accStraße" placeholder="Straße"> <br>
-        <input type="text" id="accPlz" placeholder="PLZ"> 
-        <input type="text" id="accOrt" placeholder="Ort"> 
+        <input type="text" id="accStraße" placeholder="Straße" required> <br>
+        <input type="text" id="accPlz" placeholder="PLZ" required> 
+        <input type="text" id="accOrt" placeholder="Ort" required> 
         <h3> Rechnungsanschrift</h3>
         <hr>
-        <input type="text" id="invoiceVorname" placeholder="Vorname">
-        <input type="text" id="invoiceNachname" placeholder="Nachname"> <br>
+        <input type="text" id="invoiceVorname" placeholder="Vorname" required>
+        <input type="text" id="invoiceNachname" placeholder="Nachname" required> <br>
         
-        <input type="text" id="invoiceStraße" placeholder="Straße"> <br>
-        <input type="text" id="invoicePlz" placeholder="PLZ"> 
-        <input type="text" id="invoiceOrt" placeholder="Ort"> 
+        <input type="text" id="invoiceStraße" placeholder="Straße" required> <br>
+        <input type="text" id="invoicePlz" placeholder="PLZ" required> 
+        <input type="text" id="invoiceOrt" placeholder="Ort" required> 
 
         <h3>Zahlungart</h3>
         <hr>
@@ -59,7 +73,7 @@
         <label><input type="radio" id="shipping" name="shipping[]" value="Hermes">Hermes</label>
         <label><input type="radio" id="shipping" name="shipping[]" value="Hermes Fast">Hermes Fast</label>
         <hr>
-       
+        <button id="backToChart" onclick="location.href='./warenkorb/inhalt.html'"> Zurück zum Warenkorb</button>
         <input type="submit" value="Weiter">
         </form>
     </div>
@@ -72,7 +86,9 @@
 
         </div>
         <div id="artikel">
-
+        </div>
+        <div>
+            <button id="back">Zurück</button>
         </div>
     </div>
     
