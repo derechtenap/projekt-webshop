@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>neXtLVL Unsere Produkte</title>
+    <title>WARENKORB TEST &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         /* Setzt die Icons auf die selbe vertikale Höhe -T */
@@ -13,15 +13,50 @@
             vertical-align: unset !important;
         }
 
-        /* Ändert die Farbe des Platzhalter-Textes in der Navigation, auf den grünen Bootstrap Farbton -T */
+        /* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
 
         .form-text-success::placeholder {
-            color: #28a745 !important;
+            color: #6ab04c !important;
+        }
+
+        .form-border-next-green {
+            border: 1px solid #6ab04c;
+        }
+
+        .next-bg-green {
+            background-color: #6ab04c;
+        }
+
+        .next-bg-lime {
+            background-color: #2ecc71;
+        }
+
+        .next-bg-orange {
+            background-color: #f0932b;
+        }
+
+        .next-bg-red {
+            background-color: #eb4d4b;
+        }
+
+        .container-main {
+            margin: 0 auto;
+            /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
+            max-width: calc(100% - 3rem);
         }
     </style>
 </head>
 
 <body>
+
+    <?php
+    /**Datenbankverbindung herstellen */
+    require_once("db_login.inc.php"); 
+    $mysqli = login("webshopdb"); 
+
+    /**Ausgabe der Datensätze */
+    $result = $mysqli->query("SELECT Prod_ID, ProduktName, Nettopreis, Beschreibung FROM t_produkte");
+    ?>
 
     <!-- TOP LEVEL NAV -->
     <nav class="nav border-bottom small justify-content-end">
@@ -77,10 +112,10 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input type="text" class="form-control border-success text-success form-text-success" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control form-text-success form-border-next-green" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
                     <span class="btn-group-vertical ml-2" id="basic-addon2">
                         <button type="button" class="btn btn-sm">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-success icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search icon-unset" style="color: 6ab04c;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
                                 <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                             </svg>
@@ -93,13 +128,65 @@
     <!-- /NAV -->
 
     <!-- MAIN -->
-    <div class="container">
-        <table>
-          <tbody id="data">
+    <main class="my-5 container-main">
 
-          </tbody>
-        </table>
-    </div>
+        <!-- TOAST FÜR WARENKORB INPUT -->
+
+        <div aria-live="polite" aria-atomic="true" style="position: relative;">
+            <div class="toast" style="position: absolute; top: 0; right: 0;" data-id="toast_warenkorb" data-delay="5000">
+                <div class="toast-header">
+                    <!--<img src="..." class="rounded mr-2" alt="...">-->
+                    <strong class="mr-auto"><span data-id="product_name"></span> wurde dem Warenkorb hinzugefügt!</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <span class="font-weight-bold" data-id="product_cnt">0</span> <span class="font-weight-bold" data-id="product_name"></span> wurde dem Warenkorb hinzugefügt. Sie können gerne weitere Produkte hinzufügen!
+                </div>
+            </div>
+        </div>
+
+        <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticApfel" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticApfel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title display-1 text-uppercase" id="staticApfelLabel">Apfel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Die besten Äpfel... Hier muss ein guter Text hin...
+
+                        Wie viele Produkte möchten Sie kaufen?
+                        <input type="number" class="form-control" aria-label="x Produkte" id="data-anz_apfel" value="1" required min="1" max="100" step="1">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-success" onclick="addProduct('apfel');">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Modal -->
+
+        <!-- Card -->
+        <section class="container" id="produkte">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php while($row = $result->fetch_assoc()):?>
+                <div class="col">
+                    <?php include 'card.php' ?>
+                </div>
+                <?php endwhile;?>
+            </div>
+        </section>
+         <!-- Card -->
+
+    </main>
     <!-- /MAIN -->
 
     <!-- FOOTER -->
@@ -111,7 +198,7 @@
                     <div class="col-md-3 mb-md-0 mb-3">
                         <h5 class="text-uppercase"><a href="index.html" class="text-white text-decoration-none">neXtLVL Goods</a></h5>
                         <ul class="list-unstyled">
-                            <li class="small pt-3 text-light">
+                            <li class="small pt-3 text-light w-75">
                                 neXtLVL Goods ist deine Quelle für ausgezeichnete Früche und Gemüse. Hol dir jetzt deine Portion Vitamine!
                             </li>
                         </ul>
@@ -154,9 +241,58 @@
     </footer>
     <!-- /FOOTER -->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // DEBUG Testobjekte
+
+        var fruits = ['apfel', 'bananen', 'kiwi', 'kirsche']; // Hier muss der DB Zugang hin
+
+        // Lade die Früchte in den LocalStorage
+
+        for (let i = 0; i < fruits.length; i++) {
+            console.info(`Lade ${fruits[i]} mit dem Wert false in den Storage...`);
+            localStorage.setItem(fruits[i], false);
+        }
+    </script>
+
+    <script>
+        // Mini Skript -- Lädt alles in den Storage (ohne jQuery)
+
+        function addProduct(product) {
+
+            // Wie viele Produkte sollen genommen werden --> GET data-anz_<produkt>
+            let cnt = document.getElementById('data-anz_apfel').value;
+            console.log(cnt > 0);
+
+            if (cnt > 0) {
+                // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
+                // Könnten wir auch eigentlich auch ohne machen
+                localStorage.setItem(product, true);
+
+                // Weiterer Storage Eintrag, mit der Anzahl -- Ist einfacher als ein JSON Eintrag. Könnte ich aber auch machen
+                localStorage.setItem(product + '_anz', cnt);
+
+                showWarenkorbToast(product, cnt);
+            } else {
+                alert(`Ungültige Anzahl! Die Zahl muss größer seien als ${cnt}!`);
+            }
+
+        }
+
+        function showWarenkorbToast(product, cnt) {
+            console.info('Warenkorb add!' + ` (${cnt}x ${product})`);
+
+            $('#staticApfel').modal('hide'); // Schließe Modal
+
+            $('[data-id="product_name"').html(product.charAt(0).toUpperCase() + product.slice(1)); // Erster Buchstabe groß...
+            $('[data-id="product_cnt"').html(`${cnt}x`);
+
+            // Zeige Toast
+            $('[data-id="toast_warenkorb"').toast('show');
+        }
+
         //AJAX aufrufen
         var ajax = new XMLHttpRequest();
         var method = "GET";
@@ -174,7 +310,6 @@
                 var data = JSON.parse(this.responseText);
                 console.log(data); //nur zum debugging
 
-                //html Ausgabe für <tbody>
                 var html = "";
 
                 //die daten der gewünschten Attribute durchlaufen
@@ -183,18 +318,16 @@
                     var artikel = data[i].ProduktName;
                     var preis = data[i].Nettopreis;
 
-                    html += "<tr>";
-                        html += "<td>" + artikel_Nr + "</td>";
-                        html += "<td>" + artikel + "</td>";
-                        html += "<td>" + preis * 1.19 + "</td>";
-                    html += "</tr>";
+
+                    //html += "<td>" + artikel_Nr + "</td>";
+                    html += artikel;
+                    //html += "<td>" + preis * 1.19 + "</td>";
 
                 }
 
                 document.getElementById("data").innerHTML = html;
             }
         };
-        
     </script>
 
 </body>
