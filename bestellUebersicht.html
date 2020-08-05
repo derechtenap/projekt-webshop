@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellinformation</title>
+    <script src="/js/bestellUebersicht.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      
+    $(document).ready(function() {
+            //option A
+            $("form").submit(function(e){
+                e.preventDefault(e);
+                alert (document.getElementById("accVorname").value);
+                submitToView();
+                hideElement("userInput");
+                showElement("userOutput");
+                showData();
+            });
+        });
+
+    
+
+
+    </script>
+</head>
+<body>
+    <div id="userInput">
+        <form id="bestellung" method="POST">
+        <h3> Lieferanschrift</h3>
+        <hr>
+        <input type="text" id="accVorname" placeholder="Vorname">
+        <input type="text" id="accNachname" placeholder="Nachname"> <br>
+        
+        <input type="text" id="accStraße" placeholder="Straße"> <br>
+        <input type="text" id="accPlz" placeholder="PLZ"> 
+        <input type="text" id="accOrt" placeholder="Ort"> 
+        <h3> Rechnungsanschrift</h3>
+        <hr>
+        <input type="text" id="invoiceVorname" placeholder="Vorname">
+        <input type="text" id="invoiceNachname" placeholder="Nachname"> <br>
+        
+        <input type="text" id="invoiceStraße" placeholder="Straße"> <br>
+        <input type="text" id="invoicePlz" placeholder="PLZ"> 
+        <input type="text" id="invoiceOrt" placeholder="Ort"> 
+
+        <h3>Zahlungart</h3>
+        <hr>
+        <label><input type="radio" id="payment" name="payment[]" value="Lastschrit">Lastschrit</label>
+        <label><input type="radio" id="payment" name="payment[]" value="Paypal">Paypal</label>
+        <label><input type="radio" id="payment" name="payment[]" value="Kreditkarte">Kreditkarte</label>
+        <label><input type="radio" id="payment" name="payment[]" value="Rechnung">Rechnung</label>
+
+        <h3>Versandart</h3>
+        <hr>
+        <label><input type="radio" id="shipping" name="shipping[]" value="DHL">DHL</label>
+        <label><input type="radio" id="shipping" name="shipping[]" value="DHL Express">DHL Express</label>
+        <label><input type="radio" id="shipping" name="shipping[]" value="Hermes">Hermes</label>
+        <label><input type="radio" id="shipping" name="shipping[]" value="Hermes Fast">Hermes Fast</label>
+        <hr>
+       
+        <input type="submit" value="Weiter">
+        </form>
+    </div>
+
+    <div id="userOutput" style="display: none;">
+        <div id="accountDaten">
+
+        </div>
+        <div id="invoiceDaten">
+
+        </div>
+        <div id="artikel">
+
+        </div>
+    </div>
+    
+</body>
+</html>
