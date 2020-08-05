@@ -5,14 +5,6 @@
 ## Frameworks und Third-Party
 - **CSS-Framework:** Bootstrap, Semantic UI, Bulma oder napCSS (TBA)
 
-## Übersicht
-```text
-
-│ 
-└── README.md
-
-```
-
 ## Wie commite ich zum Projekt?
 
 1. **Issue öffnen und kurz das Problem oder die Änderung beschreiben** (Assignees, Labels, Project und Milestone nicht vergessen)
