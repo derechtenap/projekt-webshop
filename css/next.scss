@@ -1,40 +1,40 @@
 // ACHTUNG: Nicht vergessen! Das ist eine SCSS Datei und muss erst zu einer CSS Datei kompiliert werden
 // Alle Änderungen an der next.min.css werden automatisch von dieser Datei überschrieben
 
-        /* Setzt die Icons auf die selbe vertikale Höhe -T */
+/* Setzt die Icons auf die selbe vertikale Höhe -T */
 
-        .icon-unset {
-            vertical-align: unset !important;
-        }
+.icon-unset {
+    vertical-align: unset !important;
+}
 
-        /* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
+/* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
 
-        .form-text-success::placeholder {
-            color: #6ab04c !important;
-        }
+.form-text-success::placeholder {
+    color: #6ab04c !important;
+}
 
-        .form-border-next-green {
-            border: 1px solid #6ab04c;
-        }
+.form-border-next-green {
+    border: 1px solid #6ab04c;
+}
 
-        .next-bg-green {
-            background-color: #6ab04c;
-        }
+.next-bg-green {
+    background-color: #6ab04c;
+}
 
-        .next-bg-lime {
-            background-color: #2ecc71;
-        }
+.next-bg-lime {
+    background-color: #2ecc71;
+}
 
-        .next-bg-orange {
-            background-color: #f0932b;
-        }
+.next-bg-orange {
+    background-color: #f0932b;
+}
 
-        .next-bg-red {
-            background-color: #eb4d4b;
-        }
+.next-bg-red {
+    background-color: #eb4d4b;
+}
 
-        .container-main {
-            margin: 0 auto;
-            /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
-            max-width: calc(100% - 3rem);
-        }
+.container-main {
+    margin: 0 auto;
+    /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
+    max-width: calc(100% - 3rem);
+}
