@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WARENKORB TEST &ndash; neXtLVL Webshop</title>
+    <title>Produkte &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
 </head>
@@ -17,7 +17,7 @@
     $mysqli = login("webshopdb"); 
 
     /**Ausgabe der Datensätze */
-    $result = $mysqli->query("SELECT Prod_ID, ProduktName, Nettopreis, Beschreibung FROM t_produkte");
+    $result = $mysqli->query("SELECT * FROM t_produkte"); // Select all wegen den Inhaltsstoffen etc.
     ?>
 
     <!-- TOP LEVEL NAV -->
@@ -111,34 +111,9 @@
 
         <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticApfel" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticApfel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title display-1 text-uppercase" id="staticApfelLabel">Apfel</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Die besten Äpfel... Hier muss ein guter Text hin...
-
-                        Wie viele Produkte möchten Sie kaufen?
-                        <input type="number" class="form-control" aria-label="x Produkte" id="data-anz_apfel" value="1" required min="1" max="100" step="1">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
-                        <button type="button" class="btn btn-success" onclick="addProduct('apfel');">In den Warenkorb</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Modal -->
-
         <!-- Card -->
         <section class="container" id="produkte">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <?php while($row = $result->fetch_assoc()):?>
                 <div class="col">
                     <?php include 'card.php' ?>
@@ -146,7 +121,9 @@
                 <?php endwhile;?>
             </div>
         </section>
-         <!-- Card -->
+        <!-- /Card -->
+
+        <div id="myModal"></div>
 
     </main>
     <!-- /MAIN -->
@@ -203,21 +180,8 @@
     </footer>
     <!-- /FOOTER -->
 
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.min.js"></script>
-
-    <script>
-        // DEBUG Testobjekte
-
-        var fruits = ['apfel', 'bananen', 'kiwi', 'kirsche']; // Hier muss der DB Zugang hin
-
-        // Lade die Früchte in den LocalStorage
-
-        for (let i = 0; i < fruits.length; i++) {
-            console.info(`Lade ${fruits[i]} mit dem Wert false in den Storage...`);
-            localStorage.setItem(fruits[i], false);
-        }
-    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Mini Skript -- Lädt alles in den Storage (ohne jQuery)
@@ -254,42 +218,6 @@
             // Zeige Toast
             $('[data-id="toast_warenkorb"').toast('show');
         }
-
-        //AJAX aufrufen
-        var ajax = new XMLHttpRequest();
-        var method = "GET";
-        var url = "data.php";
-
-        ajax.open(method, url);
-
-        // AJAX request schicken
-        ajax.send();
-
-        //Antwort von data.php
-        ajax.onreadystatechange = function() {
-            if (ajax.readyState === 4 && ajax.status === 200) {
-                // JSON Objekt in Array konvertieren
-                var data = JSON.parse(this.responseText);
-                console.log(data); //nur zum debugging
-
-                var html = "";
-
-                //die daten der gewünschten Attribute durchlaufen
-                for (var i = 0; i < data.length; i++) {
-                    var artikel_Nr = data[i].Prod_ID;
-                    var artikel = data[i].ProduktName;
-                    var preis = data[i].Nettopreis;
-
-
-                    //html += "<td>" + artikel_Nr + "</td>";
-                    html += artikel;
-                    //html += "<td>" + preis * 1.19 + "</td>";
-
-                }
-
-                document.getElementById("data").innerHTML = html;
-            }
-        };
     </script>
 
 </body>
