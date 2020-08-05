@@ -6,45 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WARENKORB TEST &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        /* Setzt die Icons auf die selbe vertikale Höhe -T */
-
-        .icon-unset {
-            vertical-align: unset !important;
-        }
-
-        /* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
-
-        .form-text-success::placeholder {
-            color: #6ab04c !important;
-        }
-
-        .form-border-next-green {
-            border: 1px solid #6ab04c;
-        }
-
-        .next-bg-green {
-            background-color: #6ab04c;
-        }
-
-        .next-bg-lime {
-            background-color: #2ecc71;
-        }
-
-        .next-bg-orange {
-            background-color: #f0932b;
-        }
-
-        .next-bg-red {
-            background-color: #eb4d4b;
-        }
-
-        .container-main {
-            margin: 0 auto;
-            /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
-            max-width: calc(100% - 3rem);
-        }
-    </style>
+    <link rel="stylesheet" href="css/next.min.css">
 </head>
 
 <body>

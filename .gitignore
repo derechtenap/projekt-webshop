@@ -1,2 +1,7 @@
-# Ignoriere Node Verzeichnis
+# Node Modules Verzeichnis
 node_modules/
+# Persöhnliches VSCODE Config Verzeichnis
+.vscode/
+# Unkomprimierte CSS Dateien
+css/next.css
+css/next.css.map
