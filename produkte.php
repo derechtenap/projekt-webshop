@@ -7,6 +7,7 @@
     <title>Produkte &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
+
 </head>
 
 <body>
@@ -123,8 +124,6 @@
         </section>
         <!-- /Card -->
 
-        <div id="myModal"></div>
-
     </main>
     <!-- /MAIN -->
 
@@ -181,44 +180,15 @@
     <!-- /FOOTER -->
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Mini Skript -- Lädt alles in den Storage (ohne jQuery)
-
-        function addProduct(product) {
-
-            // Wie viele Produkte sollen genommen werden --> GET data-anz_<produkt>
-            let cnt = document.getElementById('data-anz_apfel').value;
-            console.log(cnt > 0);
-
-            if (cnt > 0) {
-                // Produkt wird auf true im localStorage gesetzt -- Damit wir das Produkt nachher im Warenkorb anzeigen können. 
-                // Könnten wir auch eigentlich auch ohne machen
-                localStorage.setItem(product, true);
-
-                // Weiterer Storage Eintrag, mit der Anzahl -- Ist einfacher als ein JSON Eintrag. Könnte ich aber auch machen
-                localStorage.setItem(product + '_anz', cnt);
-
-                showWarenkorbToast(product, cnt);
-            } else {
-                alert(`Ungültige Anzahl! Die Zahl muss größer seien als ${cnt}!`);
-            }
-
-        }
-
-        function showWarenkorbToast(product, cnt) {
-            console.info('Warenkorb add!' + ` (${cnt}x ${product})`);
-
-            $('#staticApfel').modal('hide'); // Schließe Modal
-
-            $('[data-id="product_name"').html(product.charAt(0).toUpperCase() + product.slice(1)); // Erster Buchstabe groß...
-            $('[data-id="product_cnt"').html(`${cnt}x`);
-
-            // Zeige Toast
-            $('[data-id="toast_warenkorb"').toast('show');
-        }
+        // Verstecke Elemente beim Seitenaufbau
+        $(window).on('load', function() {
+            $('[data-select="btn_g_sum"]').hide();
+            $('[data-select="notification"]').hide();
+        });
     </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/produkte.js"></script>
 
 </body>
 
