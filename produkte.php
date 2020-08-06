@@ -7,6 +7,7 @@
     <title>Produkte &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
+
 </head>
 
 <body>
@@ -178,7 +179,16 @@
     </footer>
     <!-- /FOOTER -->
 
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // Verstecke Elemente beim Seitenaufbau
+        $(window).on('load', function() {
+            $('[data-select="btn_g_sum"]').hide();
+            $('[data-select="notification"]').hide();
+        });
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/produkte.js"></script>
 
 </body>
 
