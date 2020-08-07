@@ -11,6 +11,31 @@
 
 <body>
 
+    <!-- FULLSCREEN MODAL : Warnung: Diese Seite ist ein Projekt ... -->
+    <div class="modal fade" id="modal_warnung" tabindex="-1" aria-labelledby="modal_warnungLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-light">
+                <div class="modal-header container">
+                    <h5 class="modal-title display-4" id="modal_warnungLabel">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-square-fill icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                          </svg>
+                        Achtung! <small class="text-secondary">(Attention!)</small>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text-white" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body container">
+                    <p class="h5">Diese Seite ist ein Projekt-Showcase und gleichzeitig eine Semesterarbeit. Der hier dargestellte Webshop liefert keine Waren aus! Eingetragene Daten werden in einer Datenbank gespeichert und in der Zukunft wieder gelöscht.</p>
+                    <p lang="en" class="pb-3 border-bottom">This page is a project showcase and a term paper at the same time. The webshop shown here does not deliver any goods! Entered data are stored in a database and deleted again in the future.</p>
+                    <button type="button" class="btn btn-lg btn-outline-dark mt-5" data-dismiss="modal">Okay!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /FULLSCREEN MODAL -->
+
     <!-- TOP LEVEL NAV -->
     <nav class="nav border-bottom small justify-content-end">
 
@@ -264,7 +289,15 @@
     </footer>
     <!-- /FOOTER -->
 
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Aktiviert das Modal Warnung, nach dem die Seite geladen ist
+        $(window).on('load', function() {
+            $('#modal_warnung').modal('show');
+        });
+    </script>
 
 </body>
 
