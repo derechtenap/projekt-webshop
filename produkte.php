@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
 
+    <!-- Diese Skripte müssen am Start des Dokuments liegen -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sale.js"></script>
+
 </head>
 
 <body>
@@ -71,7 +75,7 @@
                         <a class="nav-link" aria-current="page" href="produkte/neuheiten.html">Neuheiten</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="produkte/sale.html">SALE <sup><span class="badge bg-danger align-text-top" title="3 Produkte befindet sich im Sale!">3</span></sup></a>
+                        <a class="nav-link" href="produkte/sale.html">SALE <sup><span class="badge bg-danger align-text-top" title="0 Produkte befinden sich im Sale!" data-select="notification_badge">0</span></sup></a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -179,7 +183,6 @@
     </footer>
     <!-- /FOOTER -->
 
-    <script src="js/jquery.min.js"></script>
     <script>
         // Verstecke Elemente beim Seitenaufbau
         $(window).on('load', function() {
