@@ -1,7 +1,7 @@
 <!-- CARD -->
 <a class="text-decoration-none" href="#" data-toggle="modal" data-target="#<?= $row['Produkt_Name'] ?>">
     <div class="card rounded-0 h-100">
-        <div class="card-header text-white bg-danger text-right font-weight-bold d-none" data-target="sale_<?= $row['Produkt_Name'] ?>">
+        <div class="card-header text-white bg-danger text-right font-weight-bold rounded-0 d-none" data-target="sale_<?= $row['Produkt_Name'] ?>">
             SALE! <span data-select="sale_percent"></span>
         </div>
         <!-- h-100 damit alle Cards die selbe Höhe haben -->
