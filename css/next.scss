@@ -38,3 +38,7 @@
     /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
     max-width: calc(100% - 3rem);
 }
+
+.text-shadow {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
+}
