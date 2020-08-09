@@ -3,7 +3,8 @@
 - **Idee:** Webbasierter Foodshop mit Datenbank
 
 ## Frameworks und Third-Party
-- **CSS-Framework:** Bootstrap, Semantic UI, Bulma oder napCSS (TBA)
+- **CSS-Framework:** Bootstrap (5.0-alpha1)
+- **JS-Bibliothek:** jQuery (3.5.1)
 
 ## Wie commite ich zum Projekt?
 
