@@ -1,8 +1,11 @@
 <!-- CARD -->
 <a class="text-decoration-none" href="#" data-toggle="modal" data-target="#<?= $row['Produkt_Name'] ?>">
     <div class="card rounded-0 h-100">
+        <div class="card-header text-white bg-danger text-right font-weight-bold rounded-0 d-none" data-target="sale_<?= $row['Produkt_Name'] ?>">
+            SALE! <span data-select="sale_percent"></span>
+        </div>
         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-        <img src="/images/<?= $row['Prod_ID'] ?>.jpg" alt="<?= $row['Anzeige_Name'] ?>" class="img-fluid">
+        <img src="/images/<?= $row['Prod_ID'] ?>.jpg" alt="<?= $row['Anzeige_Name'] ?>" class="img-fluid" onload="hasSale('<?= $row['Produkt_Name'] ?>', <?= $row['Sales'] ?>, <?= $row['Nettopreis'] ?>);">
 
         <div class="card-body next-bg-green text-white">
             <!-- Hier vlt die Farbe der jeweiligen Kategorie als BG-->
@@ -37,7 +40,7 @@
                             <h1 class="display-3 border-bottom">
                                 Ab <?= str_replace(".",",",round($row['Nettopreis']*1.19, 2)) ?> €<sup class="text-secondary"> /Stk.</sup>
                             </h1>
-                            <small class="d-block mb-5">Nur noch <?= $row['Lagerbestand'] ?>x auf Lager!</small>
+                            <small class="d-block mb-5">Nur noch <?= $row['Lagerbestand'] ?>x auf Lager!</small> 
                             <button type="button" class="btn btn-lg btn-success rounded-0" onclick="addProduct('artikel_<?= $row['Produkt_Name'] ?>')" data-select="btn_warenkorb">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-basket-fill icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3z" />
