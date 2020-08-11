@@ -18,26 +18,27 @@ function submitToView() {
 console.log(text);
 
 }
-
+//Div-Container werden versteckt
 function hideElement(myElementId) {
     var x = document.getElementById(myElementId);
          x.style.display = "none";
 
 }
-
+//Div-Cotainer werden auf der Seite sichtbar gemacht
 function showElement(myElementId){
     var x = document.getElementById(myElementId);
          x.style.display = "block";
 }
 
 
-
+//Checkout übersicht -> Aufruf der Daten, die sich im Localstorage oder in der DB befinden
 function showData(){
    
     createAccountDiv();
     createInvoiceDiv();
 }
 
+//Alle Accountdaten vom Formular werden mithilfe der Funktion im Checkout Div angezeigt
 function createAccountDiv(){
         
        $("#accountDaten").html(
@@ -49,7 +50,7 @@ function createAccountDiv(){
       
 }    
 
-
+//Alle Rechnungsdaten vom Formular werden mithilfe der Funktion im Checkout Div angezeigt
 function createInvoiceDiv(){
     $("#invoiceDaten").html(
         "<h3>Rechnungsdaten</h3>"+   
@@ -58,7 +59,38 @@ function createInvoiceDiv(){
         localStorage.getItem('invoicePlz')+" "+localStorage.getItem('invoiceOrt')
        );
 }
+//Alle Artikel vom Warenkorb werden mithilfe der Funktion im Checkout Div angezeigt
+function createArticleDiv(KeyArray) {
+    
 
-function createArticleDiv(){
 
+
+    
 }
+
+function getLsKeysIntoArray(str){
+    var articleInChart[];
+    for (let lsLength = 0; lsLength < localStorage.length; lsLgth++) {
+        var tempKey = localStorage.key(lsLength);
+        if (tempKey.includes(str)) {
+         articleInChart.push(tempKey);   
+        }
+        
+    }
+    return articleInChart;
+}
+
+
+
+function showProductPrice(str) {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      //Glaube Hier muss der abgleich mit dem Localstorage eintrag hin
+        //document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "artikelUebersicht.php?q="+str, true);
+    xhttp.send();
+  }
