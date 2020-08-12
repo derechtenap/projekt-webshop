@@ -72,7 +72,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="produkte/neuheiten.html">Neuheiten</a>
+                        <a class="nav-link" aria-current="page" href="produkte/neuheiten.html">Rezepte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="0 Produkte befinden sich im Sale!" data-select="notification_badge">0</span></sup></a>
@@ -165,7 +165,7 @@
                         </ul>
                     </div>
                     <div class="col-md-3 mb-md-0 mb-3">
-                        <a class="text-white text-decoration-none" href="produkte/neuheiten.html">
+                        <a class="text-white text-decoration-none" href="#">
                             <h5 class="text-uppercase">Neuheiten</h5>
                         </a>
                         <ul class="list-unstyled">
