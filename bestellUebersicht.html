@@ -158,20 +158,24 @@
             </div>
 
             <button class="btn btn-outline-primary mt-3 rounded-0" id="backToChart" onclick="location.href='./warenkorb/inhalt.html'"> Zurück zum Warenkorb</button>
-            <input class="btn btn-primary mt-3 rounded-0" type="submit" value="Weiter">
+            <input class="btn btn-primary mt-3 rounded-0 float-right" type="submit" value="Weiter">
 
         </form>
     </div>
 
-    <div id="userOutput" style="display: none;">
+    <div id="userOutput" style="">
 
         <div class="container">
             <div class="row">
-            <div class="col-xs-12 col-md-6 p-3" id="accountDaten"></div>
-            <div class="col-xs-12 col-md-6 p-3" id="invoiceDaten"></div>
+                <div class="col-xs-12 col-md-6 p-3" id="accountDaten"></div>
+                <div class="col-xs-12 col-md-6 p-3" id="invoiceDaten"></div>
             </div>
             <div class="w-100 mt-3 mb-5 p-3 border rounded-0" id="artikel"></div>
-            <button class="btn btn-primary mb-5 rounded-0" id="back">Zurück</button>
+            <div class="w-100 mt-3 mb-5">
+                <button class="btn btn-outline-primary rounded-0" id="back">Zurück</button>
+                <button class="btn btn-primary rounded-0 float-right">Jetzt Zahlungspflichtig bestellen...</button>
+            </div>
+
         </div>
     </div>
 
