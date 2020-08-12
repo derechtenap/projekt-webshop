@@ -42,3 +42,15 @@
 .text-shadow {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
 }
+
+// Versteckt die Pfeile beim Number-Input
+
+.input-number-arrows-none::-webkit-outer-spin-button,
+.input-number-arrows-none::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-number-arrows-none {
+    -moz-appearance: textfield;
+}
