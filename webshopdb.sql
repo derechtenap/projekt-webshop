@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Aug 2020 um 19:00
+-- Erstellungszeit: 12. Aug 2020 um 21:09
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.4.8
 
@@ -68,7 +68,7 @@ CREATE TABLE `t_plz` (
 
 CREATE TABLE `t_produkte` (
   `Prod_ID` int(11) NOT NULL,
-  `Produkt_Name` varchar(20) NOT NULL,
+  `Produkt_Name` varchar(30) NOT NULL,
   `Anzeige_Name` varchar(30) NOT NULL,
   `Kategorie` varchar(10) NOT NULL,
   `Nettopreis` float NOT NULL,

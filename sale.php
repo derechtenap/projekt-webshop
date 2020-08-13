@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkte &ndash; neXtLVL Webshop</title>
+    <title>Top Angebote &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
 
@@ -22,7 +22,7 @@
     $mysqli = login("webshopdb"); 
 
     /**Ausgabe der Datensätze */
-    $result = $mysqli->query("SELECT * FROM t_produkte"); // Select all wegen den Inhaltsstoffen etc.
+    $result = $mysqli->query("SELECT * FROM t_produkte where `Sales` = 1"); // Select all wegen den Inhaltsstoffen etc.
     ?>
 
     <!-- TOP LEVEL NAV -->
@@ -65,10 +65,10 @@
                             Produkte
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Obst</a></li>
-                            <li><a class="dropdown-item" href="#">Gemüse</a></li>
-                            <li><a class="dropdown-item" href="#">Früchte</a></li>
-                            <li><a class="dropdown-item" href="#">Exotisch</a></li>
+                            <li><a class="dropdown-item" href="produkte.php#obst">Obst</a></li>
+                            <li><a class="dropdown-item" href="produkte.php#gemuese">Gemüse</a></li>
+                            <li><a class="dropdown-item" href="produkte.php#fruechte">Früchte</a></li>
+                            <li><a class="dropdown-item" href="produkte.php#exotisch">Exotisch</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -114,8 +114,16 @@
             </div>
         </div>
 
-        <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
+        <!-- Sales-Bunner -->
+        <section class="jumbotron bg-light">
+        <div class="container py-5 mb-5">
+            <h1 class="display-4 text-uppercase text-center text-danger font-weight-bold">% Sales %</h1>
+            <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> </p>
+        </div>
+    </section>
 
+        <!-- /Sales-Bunner -->
+        
         <!-- Card -->
         <section class="container" id="produkte">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -150,10 +158,10 @@
                             <h5 class="text-uppercase">Produkte</h5>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a class="text-white text-decoration-none" href="produkte/obst.html">Obst</a></li>
-                            <li><a class="text-white text-decoration-none" href="produkte/gemuese.html">Gemüse</a></li>
-                            <li><a class="text-white text-decoration-none" href="produkte/fruechte.html">Früchte</a></li>
-                            <li><a class="text-white text-decoration-none" href="produkte/exotisch.html">Exotisch</a></li>
+                            <li><a class="text-white text-decoration-none" href="produkte.php#obst">Obst</a></li>
+                            <li><a class="text-white text-decoration-none" href="produkte.php#gemuese">Gemüse</a></li>
+                            <li><a class="text-white text-decoration-none" href="produkte.php#fruechte">Früchte</a></li>
+                            <li><a class="text-white text-decoration-none" href="produkte.php#exotisch">Exotisch</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 mb-md-0 mb-3">
