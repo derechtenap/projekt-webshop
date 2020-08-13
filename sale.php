@@ -154,7 +154,7 @@
                         </ul>
                     </div>
                     <div class="col-md-3 mb-md-0 mb-3">
-                        <a class="text-white text-decoration-none" href="produkte/uebersicht.html">
+                        <a class="text-white text-decoration-none" href="produkte.php">
                             <h5 class="text-uppercase">Produkte</h5>
                         </a>
                         <ul class="list-unstyled">
