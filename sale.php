@@ -200,6 +200,7 @@
     </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/produkte.js"></script>
+    <script src="js/kategorieFarben.js"></script>
 
 </body>
 

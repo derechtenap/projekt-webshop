@@ -6,7 +6,6 @@ const GEMUESEFARBE = 'next-bg-lime';
 const KATEGORIEN = ['Frucht', 'Obst', 'Exotisch', 'Gemuese'];
 
 function changeBackground(type) {
-    console.log(type);
     if (type === 'Frucht') {
         $('[data-select="Frucht"]').addClass(FRUECHTEFARBE)
     } else if (type === 'Obst') {
