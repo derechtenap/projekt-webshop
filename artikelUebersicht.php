@@ -1,8 +1,6 @@
 <?php
-$mysqli = new mysqli("servername", "username", "password", "dbname");
-if($mysqli->connect_error) {
-  exit('Could not connect');
-}
+require_once("db_login.inc.php"); 
+$mysqli = login("webshop"); 
 
 $sql = "SELECT Produkt_Name, Nettopreis
 FROM t_produkte WHERE Produkt_Name = ?";
