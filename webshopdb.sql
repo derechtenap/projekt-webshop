@@ -88,20 +88,20 @@ CREATE TABLE `t_produkte` (
 --
 
 INSERT INTO `t_produkte` (`Prod_ID`, `Produkt_Name`, `Anzeige_Name`, `Kategorie`, `Nettopreis`, `Lagerbestand`, `Sales`, `Beschreibung`, `Kalorien`, `Fett`, `Kohlenhydrate`, `Zucker`, `Protein`, `Herkunft`) VALUES
-(1, 'Tomaten', 'Tomaten', 'Frucht', 0.21, 10, 0, 'Frische Rispentomaten, Stückpreis', 18, 0.2, 3.9, 2.6, 0.9, 'NLD'),
-(2, 'Trauben_hell', 'Trauben hell', 'Frucht', 1.66, 5, 1, 'Trauben hell, 250g Packung', 76, 0.4, 17, 14, 0.5, 'GRC'),
-(3, 'Banane', 'Banane', 'Frucht', 0.45, 25, 0, 'Vorgereifte Bananen, Stückpreis', 93, 0.18, 20, 20, 1.15, 'PAN'),
-(4, 'Gurke', 'Gurke', 'Obst', 0.38, 2, 0, 'Knackige Salatgurken, Stückpreis', 16, 0.1, 3.6, 1.7, 0.7, 'NLD'),
-(5, 'Zitronen', 'Zitronen', 'Frucht', 1.31, 100, 1, 'Saftige Zitronen, 500g Netz', 29, 0.3, 9, 2.5, 1.1, 'GRC'),
-(6, 'Avocado', 'Avocado', 'Exotisch', 1, 25, 0, 'Vorgereifte Hass Avocado, Stückpreis', 160, 15, 9, 0.7, 2, 'PER'),
-(7, 'Paprika_bunt', 'Bunte Paprika', 'Obst', 1.24, 7, 0, 'Frische bunte Paprika, 500g Packung', 225, 22, 1.6, 0.4, 4.5, 'ESP'),
-(8, 'Lauchzwiebeln', 'Lauchzwiebeln', 'Gemuese', 0.31, 11, 0, 'Frische Lauchzwiebeln/ Frühlingszwiebeln, Bund', 34, 0.4, 7, 2.2, 1.9, 'DEU'),
-(9, 'Suesskartoffel', 'Süßkartoffel', 'Exotisch', 0.88, 60, 1, 'Süßkartoffeln ideal für den Backofen, Stückpreis', 86, 0.1, 20, 4.2, 1.6, 'BRA'),
-(10, 'Wassermelone', 'Wassermelone', 'Obst', 5.75, 85, 1, 'Fruchtig süße Wassermelone, ca. 6kg', 30, 0.2, 8, 6, 0.6, 'GRC'),
-(11, 'Galiamelone', 'Galiamelone', 'Exotisch', 1.03, 55, 1, 'Süße Galiamelone, Stückpreis', 26, 0.1, 5.7, 4, 0.4, 'ISR'),
-(12, 'Zwiebeln', 'Gemüsezwiebeln', 'Gemuese', 1.11, 22, 0, 'Gemüsezwiebeln, 1kg Netz', 40, 0.1, 9, 4.2, 1.1, 'DEU'),
-(13, 'Knoblauch', 'Knoblauch', 'Gemuese', 1.04, 7, 0, 'Knoblauch, 250g Netz', 145, 0.1, 28.4, 11.7, 6, 'ITA'),
-(14, 'Kartoffeln', 'Kartoffeln', 'Gemuese', 1.42, 12, 0, 'Kartoffeln festkochen, 2,5kg Netz', 69, 0, 14, 2, 2, 'DEU');
+(1, 'artikel_Tomaten', 'Tomaten', 'Frucht', 0.21, 10, 0, 'Frische Rispentomaten, Stückpreis', 18, 0.2, 3.9, 2.6, 0.9, 'NLD'),
+(2, 'artikel_Trauben_hell', 'Trauben hell', 'Frucht', 1.66, 5, 1, 'Trauben hell, 250g Packung', 76, 0.4, 17, 14, 0.5, 'GRC'),
+(3, 'artikel_Banane', 'Banane', 'Frucht', 0.45, 25, 0, 'Vorgereifte Bananen, Stückpreis', 93, 0.18, 20, 20, 1.15, 'PAN'),
+(4, 'artikel_Gurke', 'Gurke', 'Obst', 0.38, 2, 0, 'Knackige Salatgurken, Stückpreis', 16, 0.1, 3.6, 1.7, 0.7, 'NLD'),
+(5, 'artikel_Zitronen', 'Zitronen', 'Frucht', 1.31, 100, 1, 'Saftige Zitronen, 500g Netz', 29, 0.3, 9, 2.5, 1.1, 'GRC'),
+(6, 'artikel_Avocado', 'Avocado', 'Exotisch', 1, 25, 0, 'Vorgereifte Hass Avocado, Stückpreis', 160, 15, 9, 0.7, 2, 'PER'),
+(7, 'artikel_Paprika_bunt', 'Bunte Paprika', 'Obst', 1.24, 7, 0, 'Frische bunte Paprika, 500g Packung', 225, 22, 1.6, 0.4, 4.5, 'ESP'),
+(8, 'artikel_Lauchzwiebeln', 'Lauchzwiebeln', 'Gemuese', 0.31, 11, 0, 'Frische Lauchzwiebeln/ Frühlingszwiebeln, Bund', 34, 0.4, 7, 2.2, 1.9, 'DEU'),
+(9, 'artikel_Suesskartoffel', 'Süßkartoffel', 'Exotisch', 0.88, 60, 1, 'Süßkartoffeln ideal für den Backofen, Stückpreis', 86, 0.1, 20, 4.2, 1.6, 'BRA'),
+(10, 'artikel_Wassermelone', 'Wassermelone', 'Obst', 5.75, 85, 1, 'Fruchtig süße Wassermelone, ca. 6kg', 30, 0.2, 8, 6, 0.6, 'GRC'),
+(11, 'artikel_Galiamelone', 'Galiamelone', 'Exotisch', 1.03, 55, 1, 'Süße Galiamelone, Stückpreis', 26, 0.1, 5.7, 4, 0.4, 'ISR'),
+(12, 'artikel_Zwiebeln', 'Gemüsezwiebeln', 'Gemuese', 1.11, 22, 0, 'Gemüsezwiebeln, 1kg Netz', 40, 0.1, 9, 4.2, 1.1, 'DEU'),
+(13, 'artikel_Knoblauch', 'Knoblauch', 'Gemuese', 1.04, 7, 0, 'Knoblauch, 250g Netz', 145, 0.1, 28.4, 11.7, 6, 'ITA'),
+(14, 'artikel_Kartoffeln', 'Kartoffeln', 'Gemuese', 1.42, 12, 0, 'Kartoffeln festkochen, 2,5kg Netz', 69, 0, 14, 2, 2, 'DEU');
 
 -- --------------------------------------------------------
 

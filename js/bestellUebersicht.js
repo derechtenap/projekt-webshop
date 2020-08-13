@@ -14,6 +14,8 @@ function submitToView() {
         localStorage.setItem("shipping",shipping);
             console.log(payment); 
             console.log(shipping);
+        localStorage.setItem("artikel_Tomaten","5");
+        localStorage.setItem("artikel_Gurke","2");
         
 console.log(text);
 
@@ -36,6 +38,7 @@ function showData(){
    
     createAccountDiv();
     createInvoiceDiv();
+    createArticleContainer(getLsKeysIntoArray('artikel_'));
 }
 
 //Alle Accountdaten vom Formular werden mithilfe der Funktion im Checkout Div angezeigt
@@ -60,17 +63,24 @@ function createInvoiceDiv(){
        );
 }
 //Alle Artikel vom Warenkorb werden mithilfe der Funktion im Checkout Div angezeigt
-function createArticleDiv(KeyArray) {
-    
 
-
-
-    
+function createArticleContainer(keyArray){
+    var table = "<h3>Warenkorb</h3>";
+    table += "<table>";
+    table += "<tr> <th>Artikel</th> <th>Menge</th> <th>Preis</th> </tr>";
+    for (var i = 0; i < keyArray.length; i++){
+        table += '<tr>' +  
+        '<td>'+ keyArray[i] + '</td>' +
+        '<td>'+ localStorage.getItem(keyArray[i]) + '</td>' + 
+        '<td>'+ showProductPrice() + '</td>' +
+        '</tr>';
+    }
+    $("#artikel").append(table);
 }
 
 function getLsKeysIntoArray(str){
-    var articleInChart[];
-    for (let lsLength = 0; lsLength < localStorage.length; lsLgth++) {
+    var articleInChart = [];
+    for (var lsLength = 0; lsLength < localStorage.length; lsLength++) {
         var tempKey = localStorage.key(lsLength);
         if (tempKey.includes(str)) {
          articleInChart.push(tempKey);   
@@ -82,7 +92,8 @@ function getLsKeysIntoArray(str){
 
 
 
-function showProductPrice(str) {
+function showProductPrice() {
+    var str = "artikel_";
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
