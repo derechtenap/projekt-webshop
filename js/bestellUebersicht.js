@@ -93,15 +93,18 @@ function getLsKeysIntoArray(str){
 
 
 function showProductPrice() {
-    var str = "artikel_";
+    var str = "artikel_Tomaten";
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-      //Glaube Hier muss der abgleich mit dem Localstorage eintrag hin
+      console.log(this.responseText);
+        //Glaube Hier muss der abgleich mit dem Localstorage eintrag hin
         //document.getElementById("txtHint").innerHTML = this.responseText;
       }
+      console.log(xhttp.statusText);
     };
-    xhttp.open("GET", "artikelUebersicht.php?q="+str, true);
+    xhttp.open("GET", "../artikelSicht.php", true);
     xhttp.send();
   }
+  showProductPrice();
