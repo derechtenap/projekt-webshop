@@ -5,9 +5,9 @@
             SALE! <span data-select="sale_percent"></span>
         </div>
         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-        <img src="/images/<?= $row['Prod_ID'] ?>.jpg" alt="<?= $row['Anzeige_Name'] ?>" class="img-fluid" onload="hasSale('<?= $row['Produkt_Name'] ?>', <?= $row['Sales'] ?>, <?= $row['Nettopreis'] ?>);">
+        <img src="/images/<?= $row['Prod_ID'] ?>.jpg" alt="<?= $row['Anzeige_Name'] ?>" class="img-fluid" onload="hasSale('<?= $row['Produkt_Name'] ?>', <?= $row['Sales'] ?>, <?= $row['Nettopreis'] ?>); changeBackground('<?= $row['Kategorie'] ?>')">
 
-        <div class="card-body next-bg-green text-white">
+        <div class="card-body text-white" data-select="<?= $row['Kategorie'] ?>">
             <!-- Hier vlt die Farbe der jeweiligen Kategorie als BG-->
             <h1 class="card-title display-6">
                 <?= $row['Anzeige_Name'] ?>
