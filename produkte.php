@@ -183,16 +183,19 @@
     </footer>
     <!-- /FOOTER -->
 
+
+    <script src="js/changeBackground.js"></script>
     <script>
-        // Verstecke Elemente beim Seitenaufbau
+        // Diese Funktionen werden ausgeführt, wenn die Seite geladen ist
         $(window).on('load', function() {
             $('[data-select="btn_g_sum"]').hide();
             $('[data-select="notification"]').hide();
+            changeBackground();
         });
     </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/produkte.js"></script>
-    <script src="js/kategorieFarben.js"></script>
+    <script src="js/sale.js"></script>
 
 </body>
 
