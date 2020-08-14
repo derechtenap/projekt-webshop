@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns &ndash; neXtLVL Webshop</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/next.min.css">
+</head>
+
+<body>
+
+    <!-- TOP LEVEL NAV -->
+    <nav class="nav border-bottom small justify-content-end">
+
+        <!-- Es gibt aktuell noch Probleme, mit der vertikalen Position der Icons. Müssen mal gucken ob das noch gefixed wird. Sonst muss ich mal gucken wie das geht -T -->
+
+        <a href="../profil/nutzer.html" class="nav-link link-secondary" data-action="profil">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-square icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </svg>
+        </a>
+
+        <!-- Alle Actions werden mit Data-Attributen aktiviert -T -->
+
+        <a href="../warenkorb/inhalt.html" class="nav-link link-secondary" data-action="warenkorb">
+
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-basket3-fill icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 0 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
+                <path d="M13.489 14.605A.5.5 0 0 1 13 15H3a.5.5 0 0 1-.489-.395L1.311 9H14.69l-1.201 5.605z" />
+                <rect width="16" height="2" y="6" rx=".5" />
+            </svg>
+        </a>
+        <a href="../hilfe/ueber-uns.html" class="nav-link link-secondary">Über uns</a>
+        <a href="../hilfe/uebersicht.html" class="nav-link link-secondary">Hilfe</a>
+    </nav>
+    <!-- /TOP LEVEL NAV -->
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+        <div class="container">
+            <a class="navbar-brand border rounded px-3" href="../index.html">neXtLVL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-uppercase" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Produkte
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../produkte.php">Alle Produkte</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../obst.php">Obst</a></li>
+                            <li><a class="dropdown-item" href="../gemuese.php">Gemüse</a></li>
+                            <li><a class="dropdown-item" href="../fruechte.php">Früchte</a></li>
+                            <li><a class="dropdown-item" href="../exotisch.php">Exotisch</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../rezepte.html">Rezepte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="3 Produkte befindet sich im Sale!">3</span></sup></a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input type="text" class="form-control form-text-success form-border-next-green" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
+                    <span class="btn-group-vertical ml-2" id="basic-addon2">
+                        <button type="button" class="btn btn-sm">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search icon-unset" style="color: 6ab04c;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            </svg>
+                        </button>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- /NAV -->
+
+    <!-- MAIN -->
+    <main class="my-5 container">
+
+        <h1 class="display 1 text-uppercase">Hilfe</h1>
+        <p class="lead border-top pt-5 font-weight-bold">Hier wird dir geholfen! Unser Support steht dir 24/7 zur Verfügung!</p>
+        <h2 class="text-uppercase mt-5 mb-3 h3">Lorem ipsum dolor sit amet.</h2>
+        <p style="line-height: 1.7;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolore atque odit repudiandae voluptatum alias illum aperiam molestiae consequatur ex ipsa, deleniti nam accusamus voluptatem voluptatibus aspernatur quod totam fuga impedit optio commodi eveniet error nihil. Temporibus at, accusantium, quae, impedit voluptates qui tempore explicabo quas quia eos in iusto error quibusdam doloremque eaque eveniet inventore cumque eum rem sed veniam cum labore ducimus enim. Reiciendis, recusandae. Autem possimus obcaecati facilis fuga, sint nemo commodi expedita veritatis voluptates facere placeat magni, deserunt quisquam adipisci numquam voluptatibus, quas exercitationem aliquid repellendus eaque ab consequuntur quos sit. Minus rem illum voluptates suscipit veritatis optio corrupti repellat blanditiis, ducimus ad tenetur praesentium fugit repudiandae asperiores, beatae maxime, autem perspiciatis laborum consectetur sint doloribus velit excepturi! Nostrum iusto eligendi ex maxime ab magni architecto quisquam? Vitae, dolor tempora! Porro culpa sint voluptates laboriosam doloremque, excepturi reiciendis accusamus natus corporis incidunt, praesentium suscipit vel iure.</p>
+        <h2 class="text-uppercase mt-5 mb-3 h3">Corporis ut fugiat ullam quisquam</h2>
+        <p style="line-height: 1.7;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ut fugiat ullam quisquam, vero consectetur error sint consequuntur, obcaecati earum dolorem repellendus aliquid expedita similique quae fugit ex, alias cumque tempora impedit totam repudiandae harum autem. Illum, magnam, natus autem impedit vitae officia nihil nobis consectetur fugit dolores libero dolore quod velit veritatis architecto animi culpa eum dolor qui a eveniet? Molestias, facere natus reiciendis at dolorum inventore illum vel. Accusamus ab suscipit a optio dignissimos placeat nisi totam dolorem repellendus. Perspiciatis, at veniam quam atque iusto aliquam laborum deleniti reprehenderit corrupti rerum molestiae nesciunt vero magni, voluptate similique officia adipisci dolorum sint aperiam molestias. Repellendus dolor corporis, facere porro voluptatem velit, accusamus unde iste quaerat dolore est dignissimos, ipsa fuga laboriosam modi harum natus nesciunt? Magnam maxime error necessitatibus incidunt dolorum cum assumenda suscipit voluptates quod iure tempore quas repellendus, inventore magni distinctio excepturi et placeat omnis vitae saepe at reprehenderit. Cum nesciunt accusamus dolorem id impedit nihil officia ratione quidem amet, enim, doloribus eum et? Adipisci distinctio similique omnis officia excepturi in, sint explicabo placeat et possimus quos magnam facilis inventore? Cupiditate, eveniet quae repellat deserunt dolorem quos fuga blanditiis aliquam illum optio molestiae, ipsam dolore delectus voluptatibus dignissimos voluptatem ratione incidunt magni voluptatum expedita! Officiis assumenda ad praesentium adipisci reiciendis dolor, distinctio deserunt blanditiis inventore sequi, porro quas facere illum nam pariatur ipsum nobis. Optio, sunt veniam blanditiis tempore ut esse dolore quis placeat id libero ipsum labore iste sequi inventore rerum iusto consequatur quo neque architecto!</p>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <section class="container text-center text-md-left">
+                <div class="row">
+                    <hr class="clearfix w-100 d-none pb-3">
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <h5 class="text-uppercase"><a href="../index.html" class="text-white text-decoration-none">neXtLVL Goods</a></h5>
+                        <ul class="list-unstyled">
+                            <li class="small pt-3 text-light w-75">
+                                neXtLVL Goods ist deine Quelle für ausgezeichnete Früche und Gemüse. Hol dir jetzt deine Portion Vitamine!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <a class="text-white text-decoration-none" href="../produkte.php">
+                            <h5 class="text-uppercase">Produkte</h5>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a class="text-white text-decoration-none" href="../obst.php">Obst</a></li>
+                            <li><a class="text-white text-decoration-none" href="../gemuese.php">Gemüse</a></li>
+                            <li><a class="text-white text-decoration-none" href="../fruechte.php">Früchte</a></li>
+                            <li><a class="text-white text-decoration-none" href="../exotisch.php">Exotisch</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <a class="text-white text-decoration-none" href="../rezepte.html">
+                            <h5 class="text-uppercase">Neuheiten</h5>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a class="text-white text-decoration-none" href="../sale.php">Sale</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <a class="text-white text-decoration-none" href="formular.html">
+                            <h5 class="text-uppercase footer-link">Kontakt</h5>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a class="text-white text-decoration-none" href="../hilfe/ueber-uns.html">Über uns</a></li>
+                            <li><a class="text-white text-decoration-none" href="../hilfe/uebersicht.html">Hilfe</a></li>
+                            <li><a class="text-white text-decoration-none" href="impressum.html">Impressum</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <div class="text-center py-3 mt-3 border-top border-secondary">
+                <a class="text-muted small text-decoration-none" href="../index.html">&copy; 2020 neXtLVL Goods</a>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
