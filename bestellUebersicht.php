@@ -84,7 +84,7 @@
     <!-- FORMULAR CONTAINER -->
 
     <div class="container my-5">
-        <form id="bestellung" action="upload.php" method="POST">
+        <form id="bestellung" action="bestellUebersicht.php" method="POST">
 
             <div class="row" id="userInput">
 
@@ -161,7 +161,7 @@
                 </div>
 
                 <button class="btn btn-outline-primary mt-3 rounded-0" id="backToChart" onclick="location.href='./warenkorb/inhalt.html'"> Zurück zum Warenkorb</button>
-                <input class="btn btn-primary mt-3 rounded-0 float-right" type="submit" value="Weiter">
+                <input class="btn btn-primary mt-3 rounded-0 float-right" type="submit" name="btn" value="Weiter">
 
             </div>
 
@@ -184,6 +184,7 @@
         </div>
     </div>
 
+   
     <!-- FOOTER -->
     <footer class="bg-dark text-white py-5">
         <div class="container">

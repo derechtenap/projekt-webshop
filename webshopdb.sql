@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Aug 2020 um 21:09
+-- Erstellungszeit: 14. Aug 2020 um 23:29
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.4.8
 
@@ -34,6 +34,13 @@ CREATE TABLE `t_bestellliste` (
   `Menge` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Daten für Tabelle `t_bestellliste`
+--
+
+INSERT INTO `t_bestellliste` (`Pos`, `FK_Prod_ID`, `FK_Re_Nr`, `Menge`) VALUES
+(1, 6, 1, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `t_kunden` (
   `E-Mail` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Daten für Tabelle `t_kunden`
+--
+
+INSERT INTO `t_kunden` (`K_Nr`, `Name`, `Vorname`, `Adresse`, `FK_PLZ`, `E-Mail`) VALUES
+(4, 'Hans', 'Meier', 'Hallenstrasse 5', '58840', 'hans.meier@bsp.com');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +73,13 @@ CREATE TABLE `t_plz` (
   `PLZ` varchar(5) NOT NULL,
   `Ort` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `t_plz`
+--
+
+INSERT INTO `t_plz` (`PLZ`, `Ort`) VALUES
+('58840', 'Plettenberg');
 
 -- --------------------------------------------------------
 
@@ -96,7 +117,7 @@ INSERT INTO `t_produkte` (`Prod_ID`, `Produkt_Name`, `Anzeige_Name`, `Kategorie`
 (6, 'artikel_Avocado', 'Avocado', 'Exotisch', 1, 25, 0, 'Vorgereifte Hass Avocado, Stückpreis', 160, 15, 9, 0.7, 2, 'PER'),
 (7, 'artikel_Paprika_bunt', 'Bunte Paprika', 'Obst', 1.24, 7, 0, 'Frische bunte Paprika, 500g Packung', 225, 22, 1.6, 0.4, 4.5, 'ESP'),
 (8, 'artikel_Lauchzwiebeln', 'Lauchzwiebeln', 'Gemuese', 0.31, 11, 0, 'Frische Lauchzwiebeln/ Frühlingszwiebeln, Bund', 34, 0.4, 7, 2.2, 1.9, 'DEU'),
-(9, 'artikel_Suesskartoffel', 'Süßkartoffel', 'Exotisch', 0.88, 60, 1, 'Süßkartoffeln ideal für den Backofen, Stückpreis', 86, 0.1, 20, 4.2, 1.6, 'BRA'),
+(9, 'artikel_Suesskartoffel', 'Süßkartoffel', 'Exotisch', 0.88, 60, 0, 'Süßkartoffeln ideal für den Backofen, Stückpreis', 86, 0.1, 20, 4.2, 1.6, 'BRA'),
 (10, 'artikel_Wassermelone', 'Wassermelone', 'Obst', 5.75, 85, 1, 'Fruchtig süße Wassermelone, ca. 6kg', 30, 0.2, 8, 6, 0.6, 'GRC'),
 (11, 'artikel_Galiamelone', 'Galiamelone', 'Exotisch', 1.03, 55, 1, 'Süße Galiamelone, Stückpreis', 26, 0.1, 5.7, 4, 0.4, 'ISR'),
 (12, 'artikel_Zwiebeln', 'Gemüsezwiebeln', 'Gemuese', 1.11, 22, 0, 'Gemüsezwiebeln, 1kg Netz', 40, 0.1, 9, 4.2, 1.1, 'DEU'),
@@ -115,11 +136,18 @@ CREATE TABLE `t_rechnung` (
   `FK_K_Nr` int(11) NOT NULL,
   `Zahlungsart` varchar(20) NOT NULL,
   `Versandart` varchar(10) NOT NULL,
-  `Versand_Name` varchar(30) NOT NULL,
-  `Versand_Vorname` varchar(30) NOT NULL,
-  `Versand_Strasse` varchar(40) NOT NULL,
-  `Versand_PLZ` varchar(5) NOT NULL
+  `Rechnung_Name` varchar(30) NOT NULL,
+  `Rechnung_Vorname` varchar(30) NOT NULL,
+  `Rechnung_Strasse` varchar(40) NOT NULL,
+  `Rechnung_PLZ` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `t_rechnung`
+--
+
+INSERT INTO `t_rechnung` (`Re_Nr`, `Datum`, `FK_K_Nr`, `Zahlungsart`, `Versandart`, `Rechnung_Name`, `Rechnung_Vorname`, `Rechnung_Strasse`, `Rechnung_PLZ`) VALUES
+(1, '2020-08-14', 4, 'Paypal', 'Hermes', 'Hans', 'Meier', 'Hallenstrasse 5', '58840');
 
 --
 -- Indizes der exportierten Tabellen
@@ -158,7 +186,7 @@ ALTER TABLE `t_produkte`
 ALTER TABLE `t_rechnung`
   ADD PRIMARY KEY (`Re_Nr`),
   ADD KEY `FK_kunde_rechnung` (`FK_K_Nr`) USING BTREE,
-  ADD KEY `FK_rechnung_PLZ` (`Versand_PLZ`) USING BTREE;
+  ADD KEY `FK_rechnung_PLZ` (`Rechnung_PLZ`) USING BTREE;
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -168,13 +196,13 @@ ALTER TABLE `t_rechnung`
 -- AUTO_INCREMENT für Tabelle `t_bestellliste`
 --
 ALTER TABLE `t_bestellliste`
-  MODIFY `Pos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `t_kunden`
 --
 ALTER TABLE `t_kunden`
-  MODIFY `K_Nr` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `K_Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `t_produkte`
@@ -186,7 +214,7 @@ ALTER TABLE `t_produkte`
 -- AUTO_INCREMENT für Tabelle `t_rechnung`
 --
 ALTER TABLE `t_rechnung`
-  MODIFY `Re_Nr` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Re_Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints der exportierten Tabellen
@@ -203,13 +231,13 @@ ALTER TABLE `t_bestellliste`
 -- Constraints der Tabelle `t_kunden`
 --
 ALTER TABLE `t_kunden`
-  ADD CONSTRAINT `plz_kunde_FK` FOREIGN KEY (`FK_PLZ`) REFERENCES `t_plz` (`PLZ`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `plz_kunde_FK` FOREIGN KEY (`FK_PLZ`) REFERENCES `t_plz` (`PLZ`);
 
 --
 -- Constraints der Tabelle `t_rechnung`
 --
 ALTER TABLE `t_rechnung`
-  ADD CONSTRAINT `rechnung_Versand_plz_FK` FOREIGN KEY (`Versand_PLZ`) REFERENCES `t_plz` (`PLZ`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `rechnung_Versand_plz_FK` FOREIGN KEY (`Rechnung_PLZ`) REFERENCES `t_plz` (`PLZ`) ON UPDATE CASCADE,
   ADD CONSTRAINT `rechnung_kunde_FK` FOREIGN KEY (`FK_K_Nr`) REFERENCES `t_kunden` (`K_Nr`) ON UPDATE CASCADE;
 COMMIT;
 
