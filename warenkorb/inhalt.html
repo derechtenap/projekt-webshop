@@ -51,6 +51,10 @@
                             Produkte
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../produkte.php">Alle Produkte</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="../obst.php">Obst</a></li>
                             <li><a class="dropdown-item" href="../gemuese.php">Gemüse</a></li>
                             <li><a class="dropdown-item" href="../fruechte.php">Früchte</a></li>
@@ -159,16 +163,16 @@
 
             for (let i = 0; i < fruits.length; i++) {
                 let checkItem = localStorage.getItem(fruits[i]);
-                if(checkItem == 'true') {
+                if (checkItem == 'true') {
                     console.log(i, fruits[i], 'CHECK ITEM TRUE!');
                 }
 
                 let fruit_cnt = localStorage.getItem(fruits[i] + '_anz');
-                if(fruit_cnt == null) fruit_cnt = 0; // Entfernt nulls, wenn ein Produkt auf True ist aber keine Anzahl eingestellt wurde
+                if (fruit_cnt == null) fruit_cnt = 0; // Entfernt nulls, wenn ein Produkt auf True ist aber keine Anzahl eingestellt wurde
 
-                if(checkItem == 'true') { // Unsauber --> TODO true durch was ersetzen
-                let fruit = fruits[i].charAt(0).toUpperCase() + fruits[i].slice(1);
-                $('[data-id="warenkorb_cnt"]').append(liElement + fruit_cnt + 'x ' + fruit + '</li>');
+                if (checkItem == 'true') { // Unsauber --> TODO true durch was ersetzen
+                    let fruit = fruits[i].charAt(0).toUpperCase() + fruits[i].slice(1);
+                    $('[data-id="warenkorb_cnt"]').append(liElement + fruit_cnt + 'x ' + fruit + '</li>');
                 }
             }
         }

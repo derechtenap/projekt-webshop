@@ -65,6 +65,10 @@
                             Produkte
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="produkte.php">Alle Produkte</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="obst.php">Obst</a></li>
                             <li><a class="dropdown-item" href="gemuese.php">Gemüse</a></li>
                             <li><a class="dropdown-item" href="fruechte.php">Früchte</a></li>
@@ -116,14 +120,14 @@
 
         <!-- Sales-Bunner -->
         <section class="jumbotron bg-light">
-        <div class="container py-5 mb-5">
-            <h1 class="display-4 text-uppercase text-center text-danger font-weight-bold">% Sales %</h1>
-            <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> </p>
-        </div>
-    </section>
+            <div class="container py-5 mb-5">
+                <h1 class="display-4 text-uppercase text-center text-danger font-weight-bold">% Sales %</h1>
+                <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> </p>
+            </div>
+        </section>
 
         <!-- /Sales-Bunner -->
-        
+
         <!-- Card -->
         <section class="container" id="produkte">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
