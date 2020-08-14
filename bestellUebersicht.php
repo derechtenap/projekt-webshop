@@ -84,7 +84,7 @@
     <!-- FORMULAR CONTAINER -->
 
     <div class="container my-5">
-        <form id="bestellung" method="POST">
+        <form id="bestellung" action="upload.php" method="POST">
 
             <div class="row" id="userInput">
 
@@ -92,17 +92,17 @@
                     <h1 class="h3 mb-5 text-uppercase">Lieferanschrift</h1>
                     <div class="input-group mb-3">
                         <span class="input-group-text rounded-0">Name</span>
-                        <input type="text" id="accVorname" aria-label="Vorname" placeholder="Max" required autofocus class="form-control rounded-0">
-                        <input type="text" id="accNachname" aria-label="Nachname" placeholder="Mustermann" required class="form-control rounded-0">
+                        <input type="text" id="accVorname" name="Vorname" aria-label="Vorname" placeholder="Max" required autofocus class="form-control rounded-0">
+                        <input type="text" id="accNachname" name="Name" aria-label="Nachname" placeholder="Mustermann" required class="form-control rounded-0">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text rounded-0">Straße</span>
-                        <input type="text" id="accStraße" aria-label="Straße" placeholder="Musterweg 96a" required class="form-control rounded-0">
+                        <input type="text" id="accStraße" name="Adresse" aria-label="Straße" placeholder="Musterweg 96a" required class="form-control rounded-0">
                     </div>
                     <div class="input-group">
                         <span class="input-group-text rounded-0">Ort</span>
-                        <input type="number" id="accPlz" aria-label="PLZ" placeholder="12345" required class="form-control rounded-0 input-number-arrows-none">
-                        <input type="text" id="accOrt" aria-label="Ort" placeholder="Musterdorf" required class="form-control rounded-0">
+                        <input type="number" id="accPlz" name="PLZ" aria-label="PLZ" placeholder="12345" required class="form-control rounded-0 input-number-arrows-none">
+                        <input type="text" id="accOrt" name="Ort" aria-label="Ort" placeholder="Musterdorf" required class="form-control rounded-0">
                     </div>
 
                     <h2 class="h3 my-5 text-uppercase">Zahlungart</h2>
@@ -128,17 +128,17 @@
                     <h1 class="h3 mb-5 text-uppercase">Rechnungsanschrift</h1>
                     <div class="input-group mb-3">
                         <span class="input-group-text rounded-0">Name</span>
-                        <input type="text" id="invoiceVorname" aria-label="Vorname" placeholder="Max" required class="form-control rounded-0">
-                        <input type="text" id="invoiceNachname" aria-label="Nachname" placeholder="Mustermann" required class="form-control rounded-0">
+                        <input type="text" id="invoiceVorname" name="Rechnung_Vorname" aria-label="Vorname" placeholder="Max" required class="form-control rounded-0">
+                        <input type="text" id="invoiceNachname" name="Rechnung_Name" aria-label="Nachname" placeholder="Mustermann" required class="form-control rounded-0">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text rounded-0">Straße</span>
-                        <input type="text" id="invoiceStraße" aria-label="Straße" placeholder="Musterweg 96a" required class="form-control rounded-0">
+                        <input type="text" id="invoiceStraße" name="Rechnung_Strasse" aria-label="Straße" placeholder="Musterweg 96a" required class="form-control rounded-0">
                     </div>
                     <div class="input-group">
                         <span class="input-group-text rounded-0">Ort</span>
-                        <input type="number" id="invoicePlz" aria-label="PLZ" placeholder="12345" required class="form-control rounded-0 input-number-arrows-none">
-                        <input type="text" id="invoiceOrt" aria-label="Ort" placeholder="Musterdorf" required class="form-control rounded-0">
+                        <input type="number" id="invoicePlz" name="Rechnung_PLZ" aria-label="PLZ" placeholder="12345" required class="form-control rounded-0 input-number-arrows-none">
+                        <input type="text" id="invoiceOrt" name="Rechnung_Ort" aria-label="Ort" placeholder="Musterdorf" required class="form-control rounded-0">
                     </div>
 
                     <h2 class="h3 my-5 text-uppercase">Versandart</h2>
@@ -178,7 +178,7 @@
             <div class="w-100 mt-3 mb-5 p-3 border rounded-0" id="artikel"></div>
             <div class="w-100 mt-3 mb-5">
                 <button class="btn btn-outline-primary rounded-0" id="back">Zurück</button>
-                <button class="btn btn-primary rounded-0 float-right">Jetzt Zahlungspflichtig bestellen...</button>
+                <button type="submit" class="btn btn-primary rounded-0 float-right" id="bestellenBtn">Jetzt Zahlungspflichtig bestellen!</button>
             </div>
 
         </div>
@@ -268,6 +268,15 @@
                 $('#bestellung').trigger("reset");
             });
         });
+
+ /* Nach dem drücken des "Zahlungspflichtig bestellen"-Button werden die Daten aus dem
+    Local Storage in die DB geladen.
+       
+            $('#bestellenBtn').click(function() {
+                updateDB();
+            });
+            
+    */
     </script>
 
 </body>

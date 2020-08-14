@@ -108,3 +108,9 @@ function showProductPrice() {
     xhttp.send();
   }
   showProductPrice();
+/*
+  //Daten aus dem LocalStorage in die DB laden
+  function uploadData() {
+
+  };
+  */

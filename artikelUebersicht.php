@@ -1,6 +1,6 @@
 <?php
 require_once("db_login.inc.php"); 
-$mysqli = login("webshop"); 
+$mysqli = login("webshopdb"); 
 
 /*
 $sql = "SELECT Produkt_Name, Nettopreis
