@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkte &ndash; neXtLVL Webshop</title>
+    <title>Exotisch &ndash; neXtLVL Webshop</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/next.min.css">
 
@@ -22,7 +22,7 @@
     $mysqli = login("webshopdb"); 
 
     /**Ausgabe der Datensätze */
-    $result = $mysqli->query("SELECT * FROM t_produkte"); // Select all wegen den Inhaltsstoffen etc.
+    $result = $mysqli->query("SELECT * FROM t_produkte WHERE Kategorie='Exotisch'"); // Select all wegen den Inhaltsstoffen etc.
     ?>
 
     <!-- TOP LEVEL NAV -->
