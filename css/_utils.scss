@@ -1,0 +1,33 @@
+// Hilfsklassen
+
+.icon-unset {
+    vertical-align: unset !important;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+// SALE Background Gradient
+
+.sale-gradient {
+    background: #FF416C;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+}
+
+.bg-obst {
+    background: #F7971E;
+}
+
+.bg-gemuese {
+    background: #6ab04c;
+}
+
+.bg-fruechte {
+    background: #f15f79;
+}
+
+.bg-exotisch {
+    background: #6e48aa;
+}
