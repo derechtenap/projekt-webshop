@@ -78,17 +78,17 @@
     <!-- /NAV -->
 
     <!-- MAIN -->
-    <main class="my-5 container-main">
+    <main class="mb-5 container-main">
 
-        <!-- Sales-Bunner -->
-        <section class="jumbotron bg-light">
+        <!-- Sales-Banner -->
+        <section class="bg-light text-center">
             <div class="container py-5 mb-5">
-                <h1 class="display-4 text-uppercase text-center text-danger font-weight-bold">Jetzt Neu!</h1>
-                <p class="lead text-center"><strong>Die besten Rezepte zu deinen ausgewähten Artikel von NeXtLVL</strong> </p>
+                <h1 class="display-4 text-uppercase text-danger font-weight-bold">Jetzt Neu!</h1>
+                <p class="lead font-weight-normal">Die besten Rezepte zu deinen ausgewähten Artikel von neXtLVL.</p>
             </div>
         </section>
 
-        <!-- /Sales-Bunner -->
+        <!-- /Sales-Banner -->
 
         <!-- Card -->
         <section class="container" id="rezepte">
@@ -97,13 +97,13 @@
                 <div class="col">
                     <div class="card rounded-0 h-100">
                         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-                        <img src="/images/rezepte/Tomate_Mozarella.jpg" alt="Tomate Mozarella mit Basilikum" class="img-fluid" onload="hasSale('');">
+                        <img src="/images/rezepte/Tomate_Mozarella.jpg" alt="Tomate Mozarella mit Basilikum" class="img-fluid">
 
                         <div class="card-body bg-secondary text-white">
                             <h1 class="card-title display-6">
                                 Tomate Mozarella mit Basilikum
                             </h1>
-                            <button type="button" class="btn btn-light mt-3 rounded-0">
+                            <button type="button" class="btn btn-light mt-3 rounded-0" onclick="alertInfo();">
                                 Zum Rezept
                             </button>
                         </div>
@@ -113,13 +113,13 @@
                 <div class="col">
                     <div class="card rounded-0 h-100">
                         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-                        <img src="/images/rezepte/Bauernsalat.jpg" alt="Griechischer Bauernsalat" class="img-fluid" onload="hasSale('');">
+                        <img src="/images/rezepte/Bauernsalat.jpg" alt="Griechischer Bauernsalat" class="img-fluid">
 
                         <div class="card-body bg-secondary text-white">
                             <h1 class="card-title display-6">
                                 Griechischer Bauernsalat
                             </h1>
-                            <button type="button" class="btn btn-light mt-3 rounded-0">
+                            <button type="button" class="btn btn-light mt-3 rounded-0" onclick="alertInfo();">
                                 Zum Rezept
                             </button>
                         </div>
@@ -129,13 +129,13 @@
                 <div class="col">
                     <div class="card rounded-0 h-100">
                         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-                        <img src="/images/rezepte/Gefuellte_Paprika.jpg" alt="Gefüllte Paprika" class="img-fluid" onload="hasSale('');">
+                        <img src="/images/rezepte/Gefuellte_Paprika.jpg" alt="Gefüllte Paprika" class="img-fluid">
 
                         <div class="card-body bg-secondary text-white">
                             <h1 class="card-title display-6">
                                 Gefüllte Paprika
                             </h1>
-                            <button type="button" class="btn btn-light mt-3 rounded-0">
+                            <button type="button" class="btn btn-light mt-3 rounded-0" onclick="alertInfo();">
                                 Zum Rezept
                             </button>
                         </div>
@@ -145,13 +145,13 @@
                 <div class="col">
                     <div class="card rounded-0 h-100">
                         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-                        <img src="/images/rezepte/Tzatziki.jpg" alt="Tzatziki" class="img-fluid" onload="hasSale('');">
+                        <img src="/images/rezepte/Tzatziki.jpg" alt="Tzatziki" class="img-fluid">
 
                         <div class="card-body bg-secondary text-white">
                             <h1 class="card-title display-6">
                                 Tzatziki
                             </h1>
-                            <button type="button" class="btn btn-light mt-3 rounded-0">
+                            <button type="button" class="btn btn-light mt-3 rounded-0" onclick="alertInfo();">
                                 Zum Rezept
                             </button>
                         </div>
@@ -161,13 +161,13 @@
                 <div class="col">
                     <div class="card rounded-0 h-100">
                         <!-- h-100 damit alle Cards die selbe Höhe haben -->
-                        <img src="/images/rezepte/Obstsalat.jpg" alt="Obstsalat" class="img-fluid" onload="hasSale('');">
+                        <img src="/images/rezepte/Obstsalat.jpg" alt="Obstsalat" class="img-fluid">
 
                         <div class="card-body bg-secondary text-white">
                             <h1 class="card-title display-6">
                                 Obstsalat
                             </h1>
-                            <button type="button" class="btn btn-light mt-3 rounded-0">
+                            <button type="button" class="btn btn-light mt-3 rounded-0" onclick="alertInfo();">
                                 Zum Rezept
                             </button>
                         </div>
@@ -231,14 +231,13 @@
     </footer>
     <!-- /FOOTER -->
 
-    <script>
-        // Verstecke Elemente beim Seitenaufbau
-        $(window).on('load', function() {
-            $('[data-select="btn_g_sum"]').hide();
-            $('[data-select="notification"]').hide();
-        });
-    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Alert für die Buttons
+        function alertInfo() {
+            alert(`Diese Funktion ist aktuell noch nicht verfügbar!`)
+        }
+    </script>
 
 </body>
 
