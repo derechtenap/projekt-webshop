@@ -51,6 +51,7 @@
         <a href="hilfe/uebersicht.html" class="nav-link link-secondary">Hilfe</a>
     </nav>
     <!-- /TOP LEVEL NAV -->
+
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
         <div class="container">
@@ -89,25 +90,6 @@
 
     <!-- MAIN -->
     <main class="my-5 container-main">
-
-        <!-- TOAST FÜR WARENKORB INPUT -->
-
-        <div aria-live="polite" aria-atomic="true" style="position: relative;">
-            <div class="toast" style="position: absolute; top: 0; right: 0;" data-id="toast_warenkorb" data-delay="5000">
-                <div class="toast-header">
-                    <!--<img src="..." class="rounded mr-2" alt="...">-->
-                    <strong class="mr-auto"><span data-id="product_name"></span> wurde dem Warenkorb hinzugefügt!</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    <span class="font-weight-bold" data-id="product_cnt">0</span> <span class="font-weight-bold" data-id="product_name"></span> wurde dem Warenkorb hinzugefügt. Sie können gerne weitere Produkte hinzufügen!
-                </div>
-            </div>
-        </div>
-
-        <!-- Wir sollten am besten transparente Bilder hier benutzen. Damit der Farbeffekt wirkt -T -->
 
         <!-- Card -->
         <section class="container" id="produkte">
