@@ -4,22 +4,20 @@
         <div class="card-header text-white sale-gradient text-right font-weight-bold rounded-0 d-none" data-target="sale_<?= $row['Produkt_Name'] ?>">
             SALE! <span data-select="sale_percent"></span>
         </div>
-        <!-- h-100 damit alle Cards die selbe Höhe haben -->
         <img src="/images/<?= $row['Prod_ID'] ?>.jpg" alt="<?= $row['Anzeige_Name'] ?>" class="img-fluid" onload="hasSale('<?= $row['Produkt_Name'] ?>', <?= $row['Sales'] ?>, '<?= $row['Nettopreis'] ?>')">
 
         <div class="card-body text-white" data-select="<?= $row['Kategorie'] ?>">
-            <!-- Hier vlt die Farbe der jeweiligen Kategorie als BG-->
             <h1 class="card-title display-6">
                 <?= $row['Anzeige_Name'] ?>
             </h1>
             <button type="button" class="btn btn-light mt-3 rounded-0">
-                <!-- Preise auf zwei Nachkommastellen gerundet und Punkt duch Komma getauscht -->
                 Ab <?= str_replace(".",",",round($row['Nettopreis']*1.19, 2)) ?> €<sup class="text-secondary"> /Stk.</sup>
             </button>
         </div>
     </div>
 </a>
 <!-- /CARD -->
+
 <!-- MODAL -->
 <div class="modal fade" id="<?= $row['Produkt_Name'] ?>" data-select="modal" data-backdrop="<?= $row['Produkt_Name'] ?>" data-keyboard="false" tabindex="-1" aria-labelledby="<?= $row['Produkt_Name'] ?>" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">

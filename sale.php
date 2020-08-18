@@ -22,13 +22,11 @@
     $mysqli = login("webshopdb"); 
 
     /**Ausgabe der Datensätze */
-    $result = $mysqli->query("SELECT * FROM t_produkte where `Sales` = 1"); // Select all wegen den Inhaltsstoffen etc.
+    $result = $mysqli->query("SELECT * FROM t_produkte where `Sales` = 1");
     ?>
 
     <!-- TOP LEVEL NAV -->
     <nav class="nav border-bottom small justify-content-end">
-
-        <!-- Es gibt aktuell noch Probleme, mit der vertikalen Position der Icons. Müssen mal gucken ob das noch gefixed wird. Sonst muss ich mal gucken wie das geht -T -->
 
         <a href="profil/nutzer.html" class="nav-link link-secondary" data-action="profil">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-square icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -36,8 +34,6 @@
                 <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
             </svg>
         </a>
-
-        <!-- Alle Actions werden mit Data-Attributen aktiviert -T -->
 
         <a href="warenkorb/inhalt.php" class="nav-link link-secondary" data-action="warenkorb">
 
@@ -51,6 +47,7 @@
         <a href="hilfe/uebersicht.html" class="nav-link link-secondary">Hilfe</a>
     </nav>
     <!-- /TOP LEVEL NAV -->
+
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
         <div class="container">
@@ -90,32 +87,14 @@
     <!-- MAIN -->
     <main class="mb-5 container-main">
 
-        <!-- TOAST FÜR WARENKORB INPUT -->
-
-        <div aria-live="polite" aria-atomic="true" style="position: relative;">
-            <div class="toast" style="position: absolute; top: 0; right: 0;" data-id="toast_warenkorb" data-delay="5000">
-                <div class="toast-header">
-                    <!--<img src="..." class="rounded mr-2" alt="...">-->
-                    <strong class="mr-auto"><span data-id="product_name"></span> wurde dem Warenkorb hinzugefügt!</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    <span class="font-weight-bold" data-id="product_cnt">0</span> <span class="font-weight-bold" data-id="product_name"></span> wurde dem Warenkorb hinzugefügt. Sie können gerne weitere Produkte hinzufügen!
-                </div>
-            </div>
-        </div>
-
-        <!-- Sales-Bunner -->
-        <section class="sale-gradient text-white">
+        <!-- Sales-Banner -->
+        <section class="sale-gradient text-white text-center">
             <div class="container py-5 mb-5">
-                <h1 class="display-4 text-uppercase text-center font-weight-bold">% Sales %</h1>
-                <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> </p>
+                <h1 class="display-4 text-uppercase font-weight-bold">% Sales %</h1>
+                <p class="lead font-weight-normal"><strong>Die besten Preise weit und breit!</strong> </p>
             </div>
         </section>
-
-        <!-- /Sales-Bunner -->
+        <!-- /Sales-Banner -->
 
         <!-- Card -->
         <section class="container" id="produkte">
