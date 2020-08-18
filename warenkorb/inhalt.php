@@ -91,13 +91,21 @@
         <p class="font-italic text-center" data-select="product_empty">Der Warenkorb ist aktuell leer!</p>
         <table class="table d-none" data-select="product_table">
             <thead>
-                <tr>
-                    <th scope="col">Menge</th>
+                <tr>                    
                     <th scope="col">Artikel</th>
+                    <th scope="col">Menge</th>
                     <th scope="col">Einzelpreis</th>
                     <th scope="col">Preis</th>
                 </tr>
             </thead>
+            <tfoot>
+                <tr class="font-weight-bold bg-dark text-white">
+                    <td scope="col" >Summe</td>
+                    <td scope="col" data-select="sum"></td>
+                    <td scope="col">&ndash;</td>
+                    <td scope="col" data-select="sumPrice"></td>
+                </tr>
+            </tfoot>
             <tbody data-select="product_tbody"></tbody>
         </table>
 
