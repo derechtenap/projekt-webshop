@@ -88,7 +88,7 @@
     <!-- /NAV -->
 
     <!-- MAIN -->
-    <main class="my-5 container-main">
+    <main class="mb-5 container-main">
 
         <!-- TOAST FÜR WARENKORB INPUT -->
 
@@ -108,9 +108,9 @@
         </div>
 
         <!-- Sales-Bunner -->
-        <section class="jumbotron bg-light">
+        <section class="sale-gradient text-white">
             <div class="container py-5 mb-5">
-                <h1 class="display-4 text-uppercase text-center text-danger font-weight-bold">% Sales %</h1>
+                <h1 class="display-4 text-uppercase text-center font-weight-bold">% Sales %</h1>
                 <p class="lead text-center"><strong>Die besten Preise weit und breit!</strong> </p>
             </div>
         </section>
