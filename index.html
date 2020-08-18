@@ -29,7 +29,7 @@
                 <div class="modal-body container">
                     <p class="h5">Diese Seite ist ein Projekt-Showcase und gleichzeitig eine Semesterarbeit. Der hier dargestellte Webshop liefert keine Waren aus! Eingetragene Daten werden in einer Datenbank gespeichert und in der Zukunft wieder gelöscht.</p>
                     <p lang="en" class="pb-3 border-bottom">This page is a project showcase and a term paper at the same time. The webshop shown here does not deliver any goods! Entered data are stored in a database and deleted again in the future.</p>
-                    <button type="button" class="btn btn-lg btn-outline-dark mt-5" data-dismiss="modal">Okay!</button>
+                    <button type="button" class="btn btn-lg btn-outline-dark mt-5" data-dismiss="modal" onclick="dismissInfoModal();">Okay!</button>
                 </div>
             </div>
         </div>
@@ -261,13 +261,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/mwstAlert.js"></script>
-
-    <script>
-        // Aktiviert das Modal Warnung, nach dem die Seite geladen ist
-        $(window).on('load', function() {
-            $('#modal_warnung').modal('show');
-        });
-    </script>
+    <script src="js/infoModal.js"></script>
 
 </body>
 
