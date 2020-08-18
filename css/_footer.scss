@@ -10,4 +10,8 @@ $bootstrap-white: #ffffff;
 
 .footer-secondary {
     color: darken($bootstrap-white, 15%); // 15% dunkler als die Bootstrap-"text-white"-Klasse
+
+    &:hover {
+        color: $bootstrap-white;
+    }
 }
