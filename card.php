@@ -47,7 +47,7 @@
                             </button>
                             <div class="input-group mb-3" data-select="btn_g_sum">
                                 <button class="btn btn-outline-secondary rounded-0" type="button" id="button-addon1" data-select="decrease" onclick="decreaseSum(1);">-</button>
-                                <input type="number" class="form-control" value="1" min="0" max="1000" step="1" aria-label="Summe" aria-describedby="button-addon1" data-select="sum">
+                                <input type="number" class="form-control input-number-arrows-none" value="1" min="0" max="1000" step="1" aria-label="Summe" aria-describedby="button-addon1" data-select="sum">
                                 <button class="btn btn-outline-secondary rounded-0" type="button" id="button-addon2" data-select="increase" onclick="increaseSum(1);">+</button>
                                 <button class="btn btn-success rounded-0" type="button" id="button-addon2" onclick="addCart('<?= $row['Produkt_Name'] ?>');">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check icon-unset" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
