@@ -95,14 +95,14 @@
     </nav>
     <!-- /NAV -->
 
-    <section class="alert alert-dark alert-dismissible fade show rounded-0 p-5 shadow-sm" role="alert">
+    <section class="alert alert-dark alert-dismissible fade show rounded-0 p-5 shadow-sm d-none" data-select="mwstAlert" role="alert">
         <div class="container">
             <h5>Die Mehrwehrsteuer wurde gesenkt!</h5>
             <p>
                 Wir haben alle Preise aktualisiert und du profitierst von den neuen Preisen!
             </p>
             <button type="button" class="btn btn-sm btn-dark" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">Okay</span>
+                <span aria-hidden="true" onclick="dismissMwstAlert();">Okay</span>
             </button>
         </div>
     </section>
@@ -260,6 +260,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/mwstAlert.js"></script>
 
     <script>
         // Aktiviert das Modal Warnung, nach dem die Seite geladen ist
