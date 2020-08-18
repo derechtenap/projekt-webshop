@@ -1,5 +1,5 @@
 // Fullscreen-Modal, welches auf der Index-Seite angezeigt wird
-// Aktiviert das Modal Warnung, nach dem die Seite geladen ist
+// Aktiviert die Modal Warnung, nach dem die Seite geladen ist
 let infoModal = localStorage.getItem('displayInfoModal')
 
 $(window).on('load', function() {
