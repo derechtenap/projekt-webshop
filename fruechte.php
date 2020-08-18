@@ -79,20 +79,9 @@
                         <a class="nav-link" aria-current="page" href="rezepte.html">Rezepte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="0 Produkte befinden sich im Sale!" data-select="notification_badge">0</span></sup></a>
+                        <a class="nav-link" href="sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="4 Produkte befinden sich im Sale!" data-select="notification_badge">4</span></sup></a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input type="text" class="form-control form-text-success form-border-next-green" placeholder="Wonach suchen Sie?" aria-label="Wonach suchen Sie?" aria-describedby="basic-addon2">
-                    <span class="btn-group-vertical ml-2" id="basic-addon2">
-                        <button type="button" class="btn btn-sm">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search icon-unset" style="color: 6ab04c;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                            </svg>
-                        </button>
-                    </span>
-                </form>
             </div>
         </div>
     </nav>
@@ -136,9 +125,9 @@
     <!-- /MAIN -->
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white py-5">
+    <footer class="footer-gradient text-white py-5">
         <div class="container">
-            <section class="container text-center text-md-left">
+            <section class="text-center text-md-left">
                 <div class="row">
                     <hr class="clearfix w-100 d-none pb-3">
                     <div class="col-md-3 mb-md-0 mb-3">
@@ -154,34 +143,32 @@
                             <h5 class="text-uppercase">Produkte</h5>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a class="text-white text-decoration-none" href="obst.php">Obst</a></li>
-                            <li><a class="text-white text-decoration-none" href="gemuese.php">Gemüse</a></li>
-                            <li><a class="text-white text-decoration-none" href="fruechte.php">Früchte</a></li>
-                            <li><a class="text-white text-decoration-none" href="exotisch.php">Exotisch</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="sale.php">Sale</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="obst.php">Obst</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="gemuese.php">Gemüse</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="fruechte.php">Früchte</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="exotisch.php">Exotisch</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 mb-md-0 mb-3">
                         <a class="text-white text-decoration-none" href="rezepte.html">
-                            <h5 class="text-uppercase">Neuheiten</h5>
+                            <h5 class="text-uppercase">Rezepte</h5>
                         </a>
-                        <ul class="list-unstyled">
-                            <li><a class="text-white text-decoration-none" href="sale.php">Sale</a></li>
-                        </ul>
                     </div>
                     <div class="col-md-3 mb-md-0 mb-3">
                         <a class="text-white text-decoration-none" href="kontakt/formular.html">
-                            <h5 class="text-uppercase footer-link">Kontakt</h5>
+                            <h5 class="text-uppercase">Kontakt</h5>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a class="text-white text-decoration-none" href="hilfe/ueber-uns.html">Über uns</a></li>
-                            <li><a class="text-white text-decoration-none" href="hilfe/uebersicht.html">Hilfe</a></li>
-                            <li><a class="text-white text-decoration-none" href="kontakt/impressum.html">Impressum</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="hilfe/ueber-uns.html">Über uns</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="hilfe/uebersicht.html">Hilfe</a></li>
+                            <li><a class="footer-secondary text-decoration-none" href="kontakt/impressum.html">Impressum</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
-            <div class="text-center py-3 mt-3 border-top border-secondary">
-                <a class="text-muted small text-decoration-none" href="index.html">&copy; 2020 neXtLVL Goods</a>
+            <div class="py-3 mt-3">
+                <a class="footer-secondary small text-decoration-none" href="index.html">&copy; 2020 neXtLVL Goods</a>
             </div>
         </div>
     </footer>

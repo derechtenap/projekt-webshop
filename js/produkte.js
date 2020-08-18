@@ -4,7 +4,6 @@ function addProduct(p) {
 
     // Funktion fügt das Produkt dem Warenkorb hinzu
     // Wird per onClick auf den Warenkorb-Button im Modal ausgelöst
-    console.info(`${p} wurde dem Warenkorb hinzugefügt`);
     $('[data-select="btn_warenkorb"]').fadeOut(500);
     $('[data-select="btn_g_sum"]').delay(500).fadeIn(500);
 }
@@ -13,14 +12,12 @@ function addProduct(p) {
 // Optimierungen folgen... Ist gerade zu spät :D
 
 function increaseSum(val) {
-    console.info(`Summe erhöht auf ${val + 1}!`);
     $('[data-select="sum"]').attr('value', val + 1);
     $('[data-select="increase"]').attr('onclick', 'increaseSum(' + (val + 1) + ')');
     $('[data-select="decrease"]').attr('onclick', 'decreaseSum(' + (val + 1) + ')');
 }
 
 function decreaseSum(val) {
-    console.info(`Summe verringert auf ${val - 1}!`);
     $('[data-select="sum"]').attr('value', val - 1);
     $('[data-select="decrease"]').attr('onclick', 'decreaseSum(' + (val - 1) + ')');
     $('[data-select="increase"]').attr('onclick', 'increaseSum(' + (val - 1) + ')');
@@ -29,17 +26,14 @@ function decreaseSum(val) {
 function addCart(p) {
     let val = $('[data-select="sum"]').val();
     if (localStorage.getItem(p) === null) {
-        console.log('Item noch nicht im Storage!');
         localStorage.setItem(p, val);
     } else {
         let newVal = parseInt(localStorage.getItem(p)) + parseInt(val); ;
         localStorage.setItem(p, newVal);
-        console.log(`Neue Anzahl von ${p} im Warenkorb: ${newVal}`);
     }
     $('[data-select="btn_g_sum"]').fadeOut(500);
     $('[data-select="notification"]').fadeIn(500);
     $('[data-select="notification"]').delay(1000).fadeOut(500);
-    console.info(`${p} wurde ${val}x dem Storage hinzugefügt!`);
     $('[data-select="sum"]').attr('value', 1);
     $('[data-select="decrease"]').attr('onclick', 'decreaseSum(' + 1 + ')');
     $('[data-select="increase"]').attr('onclick', 'increaseSum(' + 1 + ')');

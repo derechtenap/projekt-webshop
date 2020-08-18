@@ -1,0 +1,17 @@
+// Enthält Klassen für den Footer unserer Seite
+$bootstrap-white: #ffffff;
+
+.footer-gradient {
+    background: #141e30; // Fallback für ganze alte Browser
+    background: -webkit-linear-gradient(to right, #243b55, #141e30); // Chrome 10-25 & Safari 5.1-6
+    background: -o-linear-gradient(to right, #243b55, #141e30); // Opera 
+    background: linear-gradient(to right, #243b55, #141e30); // Moderne Browser
+}
+
+.footer-secondary {
+    color: darken($bootstrap-white, 15%); // 15% dunkler als die Bootstrap-"text-white"-Klasse
+
+    &:hover {
+        color: $bootstrap-white;
+    }
+}

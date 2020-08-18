@@ -1,50 +1,7 @@
 // ACHTUNG: Nicht vergessen! Das ist eine SCSS-Datei, welche zu einer CSS Datei kompiliert werden muss
-// Alle Änderungen an den CSS-Dateien werden überschrieben -T
-
-/* Setzt die Icons auf die selbe vertikale Höhe -T */
-
-.icon-unset {
-    vertical-align: unset !important;
-}
-
-/* Ändert die Farbe des Platzhalter-Textes in der Navigation -T */
-
-.form-text-success::placeholder {
-    color: #6ab04c !important;
-}
-
-.form-border-next-green {
-    border: 1px solid #6ab04c;
-}
-
-.next-bg-green {
-    background-color: #6ab04c;
-}
-
-.next-bg-lime {
-    background-color: #2ecc71;
-}
-
-.next-bg-orange {
-    background-color: #f0932b;
-}
-
-.next-bg-red {
-    background-color: #eb4d4b;
-}
-
-.container-main {
-    margin: 0 auto;
-    /* 100% - 3rem, damit die Cards der Früchte mit g-4 den richtigen Abstand zum Rand haben -T */
-    max-width: calc(100% - 3rem);
-}
-
-.text-shadow {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
-}
+// Alle Änderungen an den CSS-Dateien werden überschrieben 
 
 // Versteckt die Pfeile beim Number-Input
-
 .input-number-arrows-none::-webkit-outer-spin-button,
 .input-number-arrows-none::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -54,3 +11,6 @@
 .input-number-arrows-none {
     -moz-appearance: textfield;
 }
+
+@import '_footer.scss';
+@import '_utils.scss';
