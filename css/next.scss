@@ -1,24 +1,7 @@
 // ACHTUNG: Nicht vergessen! Das ist eine SCSS-Datei, welche zu einer CSS Datei kompiliert werden muss
 // Alle Änderungen an den CSS-Dateien werden überschrieben 
 
-.next-bg-green {
-    background-color: #6ab04c;
-}
-
-.next-bg-lime {
-    background-color: #2ecc71;
-}
-
-.next-bg-orange {
-    background-color: #f0932b;
-}
-
-.next-bg-red {
-    background-color: #eb4d4b;
-}
-
 // Versteckt die Pfeile beim Number-Input
-
 .input-number-arrows-none::-webkit-outer-spin-button,
 .input-number-arrows-none::-webkit-inner-spin-button {
     -webkit-appearance: none;

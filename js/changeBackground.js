@@ -1,9 +1,9 @@
 // Diese CSS-Klassen werden Produkttypen zugewiesen
 const COLOR = [
-    'next-bg-red',
-    'next-bg-green',
-    'next-bg-orange',
-    'next-bg-lime'
+    'bg-fruechte',
+    'bg-obst',
+    'bg-exotisch',
+    'bg-gemuese'
 ]
 
 // Kategorien, welche in der DB festgelegt wurden
