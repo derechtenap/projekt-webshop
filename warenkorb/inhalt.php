@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="../css/next.min.css">
 </head>
 
-<body onload="checkStorage();">
+<body>
+
+    <?php
+    /**Datenbankverbindung herstellen */
+    require_once("../db_login.inc.php"); 
+    $mysqli = login("webshopdb"); 
+
+    /**Ausgabe der Datensätze */
+    $result = $mysqli->query("SELECT * FROM t_produkte");
+    ?>
 
     <!-- TOP LEVEL NAV -->
     <nav class="nav border-bottom small justify-content-end">
@@ -76,12 +85,21 @@
     <!-- MAIN -->
     <main class="my-5 container">
 
-        <p class="lead alert alert-danger">Keiner Test für den Warenkorb -- Design noch nicht fertig!</p>
-
         <h1 class="display 1 text-uppercase">Warenkorb</h1>
+        <p class="lead font-weight-normal mb-5">Diese Produkte befinden sich aktuell im Warenkorb:</p>
 
-        <ul class="list-group list-group-flush" data-id="warenkorb_cnt">
-        </ul>
+        <p class="font-italic text-center" data-select="product_empty">Der Warenkorb ist aktuell leer!</p>
+        <table class="table d-none" data-select="product_table">
+            <thead>
+                <tr>
+                    <th scope="col">Menge</th>
+                    <th scope="col">Artikel</th>
+                    <th scope="col">Einzelpreis</th>
+                    <th scope="col">Preis</th>
+                </tr>
+            </thead>
+            <tbody data-select="product_tbody"></tbody>
+        </table>
 
         <div class="container-fluid border-top mt-5">
             <a class="btn btn-lg btn-primary my-3" href="../bestellUebersicht.html">Zur Kasse</a>
@@ -141,33 +159,14 @@
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/addProducts.js"></script>
 
+    <?php while($row = $result->fetch_assoc()):?>
     <script>
-        function checkStorage() {
-            // DEBUG Testobjekte
-
-            var fruits = ['apfel', 'bananen', 'kiwi', 'kirsche']; // Hier muss der DB Zugang hin
-
-            // Lade die Früchte in den LocalStorage
-
-            let liElement = "<li class=\"list-group-item\">";
-
-            for (let i = 0; i < fruits.length; i++) {
-                let checkItem = localStorage.getItem(fruits[i]);
-                if (checkItem == 'true') {
-                    console.log(i, fruits[i], 'CHECK ITEM TRUE!');
-                }
-
-                let fruit_cnt = localStorage.getItem(fruits[i] + '_anz');
-                if (fruit_cnt == null) fruit_cnt = 0; // Entfernt nulls, wenn ein Produkt auf True ist aber keine Anzahl eingestellt wurde
-
-                if (checkItem == 'true') { // Unsauber --> TODO true durch was ersetzen
-                    let fruit = fruits[i].charAt(0).toUpperCase() + fruits[i].slice(1);
-                    $('[data-id="warenkorb_cnt"]').append(liElement + fruit_cnt + 'x ' + fruit + '</li>');
-                }
-            }
-        }
+        localStorage.setItem('price_<?= $row['Produkt_Name'] ?>', '<?= $row['Nettopreis'] ?>')
     </script>
+    <?php endwhile;?>
+
 
 </body>
 
