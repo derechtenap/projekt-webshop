@@ -29,12 +29,10 @@ function decreaseSum(val) {
 function addCart(p) {
     let val = $('[data-select="sum"]').val();
     if (localStorage.getItem(p) === null) {
-        console.log('Item noch nicht im Storage!');
         localStorage.setItem(p, val);
     } else {
         let newVal = parseInt(localStorage.getItem(p)) + parseInt(val); ;
         localStorage.setItem(p, newVal);
-        console.log(`Neue Anzahl von ${p} im Warenkorb: ${newVal}`);
     }
     $('[data-select="btn_g_sum"]').fadeOut(500);
     $('[data-select="notification"]').fadeIn(500);
