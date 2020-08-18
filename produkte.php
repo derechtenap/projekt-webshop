@@ -79,7 +79,7 @@
                         <a class="nav-link" aria-current="page" href="rezepte.html">Rezepte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="0 Produkte befinden sich im Sale!" data-select="notification_badge">0</span></sup></a>
+                        <a class="nav-link" href="sale.php">SALE <sup><span class="badge bg-danger align-text-top" title="4 Produkte befinden sich im Sale!" data-select="notification_badge">4</span></sup></a>
                     </li>
                 </ul>
             </div>
